@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20161226171904) do
   end
 
   create_table "labs", force: :cascade do |t|
+    t.integer  "college_id"
     t.string   "name",         null: false
     t.string   "teacher"
     t.string   "message"
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20161226171904) do
     t.text     "theme_detail"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["college_id"], name: "index_labs_on_college_id"
   end
 
   create_table "lesson_labs", force: :cascade do |t|

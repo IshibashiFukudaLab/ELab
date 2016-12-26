@@ -1,7 +1,11 @@
 class Lab < ApplicationRecord
   has_many :people
+  belongs_to :college
   has_many :lesson_labs, dependent: :destroy
   has_many :lessons, :through => :lesson_labs
+  has_many :company_labs, dependent: :destroy
+  has_many :companies, :through => :company_labs
+
 
   accepts_nested_attributes_for :lesson_labs, allow_destroy: true
 

@@ -22,13 +22,13 @@ class LabsController < ApplicationController
 
   # GET /labs/new
   def new
-    #@lab = Lab.find(1)
+    @lab = Lab.find(1)
     #@lesson = Lesson.create(name: "OS")
     #@lab.groups << Lesson.find(1)
     #@lab.save
-    @lab = Lab.find(1)
-    @lesson_lab = LessonLab.new(lesson_id: 1,lab_id: 1)
-    @lesson_lab.save
+    #@lab = Lab.find(1)
+    #@lesson_lab = LessonLab.new(lesson_id: 1,lab_id: 1)
+    #@lesson_lab.save
   end
 
   # GET /labs/1/edit
