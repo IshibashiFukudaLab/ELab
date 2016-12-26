@@ -1,6 +1,7 @@
 class LabsController < ApplicationController
   before_action :set_lab, only: [:show, :edit, :update, :destroy]
   before_action :set_lessons, only: [:edit]
+  before_action :set_companies, only: [:edit]
 
   # GET /labs
   # GET /labs.json
@@ -102,12 +103,7 @@ class LabsController < ApplicationController
   # PATCH/PUT /labs/1.json
   def update
     logger.debug("AndTough")
-    #logger.debug(params[:group][:lesson_ids].inspect)
-    params[:group][:lesson_ids].each do |lesson|
-      @lessonlab = LessonLab.new(lesson_id: lesson, lab_id: @lab.id)
-      @lessonlab.save!
-      logger.debug(lesson.to_s)
-    end
+    logger.debug(params.inspect)
 
 
     respond_to do |format|
@@ -116,6 +112,10 @@ class LabsController < ApplicationController
           @lessonlab = LessonLab.new(lesson_id: lesson, lab_id: @lab.id)
           @lessonlab.save!
           logger.debug(lesson.to_s)
+        end
+        params[:group][:company_ids].each do |company|
+          @companylab = CompanyLab.new(company_id: company, lab_id: @lab.id)
+          @companylab.save!
         end
         format.html { redirect_to @lab, notice: 'Lab was successfully updated.' }
         format.json { render :show, status: :ok, location: @lab }
@@ -144,6 +144,10 @@ class LabsController < ApplicationController
 
     def set_lessons
       @lessons = Lesson.all
+    end
+
+    def set_companies
+      @companies = Company.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
