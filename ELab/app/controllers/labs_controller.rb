@@ -13,11 +13,14 @@ class LabsController < ApplicationController
     @labs = Lab.where(id: Person.select(:lab_id).group(:lab_id).having(Person.arel_table[:lab_id].count.gteq(params[:minmember].to_i)).having(Person.arel_table[:lab_id].count.lteq(params[:maxmember].to_i))).where("name LIKE ?", "%#{params[:search]}%")
     #@labs = Lab.where("name LIKE ?", "%#{params[:search]}%")
 
+
+    
   end
 
   # GET /labs/1
   # GET /labs/1.json
   def show
+
   end
 
   # GET /labs/new
