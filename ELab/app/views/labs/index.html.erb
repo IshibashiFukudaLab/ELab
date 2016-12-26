@@ -66,7 +66,7 @@
 
 
 <div class="ResultArea">
-  <div class="ResultArea__header">全<span class="ResultArea__header__count">◯</span>件</div>
+  <div class="ResultArea__header">全<span class="ResultArea__header__count"><%= @count.to_s %></span>件</div>
   <% @labs.each do |lab| %>
 
   <div class="ResultArea__Result">   
@@ -109,6 +109,16 @@
 
   <% @labscompanies.each do |company| %>
   <% company.labs.each do |lab|  %>
+  <div class="ResultArea__Result">
+    <div class="ResultArea__Result__labname">
+        <%= lab.name %>
+    </div>
+  </div>
+  <% end  %>
+  <% end %>
+
+  <% @labscolleges.each do |college| %>
+  <% college.labs.each do |lab|  %>
   <div class="ResultArea__Result">
     <div class="ResultArea__Result__labname">
         <%= lab.name %>

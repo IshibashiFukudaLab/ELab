@@ -9,13 +9,10 @@ class LabsController < ApplicationController
     #在籍人数で検索	
     min = params[:minmember]
     logger.debug(params[:minmember])
-    #@labs = Lab.where("name LIKE ?", "%#{params[:search]}%")
+    @labs = Lab.where("name LIKE ?", "%#{params[:search]}%")
     #if @labs.count < 1
     #  @labs = Lab.all
     #end
-    
-    @labs = Lab.joins(:people).where("people.name LIKE ?" , "%#{params[:search]}%")
-    logger.debug(@labs.inspect)
 
     @labslabname = Lab.where("name LIKE ?", "%#{params[:search]}%")
     logger.debug(@labslabname.inspect)
@@ -24,6 +21,24 @@ class LabsController < ApplicationController
     @labsmessages = Lab.where("message LIKE ?","%#{params[:search]}%")
     @labslessons = Lesson.where("name LIKE ?" , "%#{params[:search]}%")
     @labscompanies = Company.where("name LIKE ?", "%#{params[:search]}%")
+    @labscolleges = College.where("name LIKE ?","%#{params[:search]}%")
+
+    @count = 0    
+
+    @count += @labslabname.count
+    @count += @labspersonname.count
+    @count += @labstheme.count
+    @count += @labsmessages.count
+    @labslessons.each do |lesson|
+      @count += lesson.labs.count
+    end
+    @labscompanies.each do |company|
+      @count += company.labs.count
+    end
+    @labscolleges.each do |college|
+      @count += college.labs.count
+    end
+    logger.debug("カウント：" + @count.to_s)
 
     #@labs = @labs.where(id: Person.select(:lab_id).group(:lab_id).having("count(lab_id) <= ?", 10).having("count(lab_id) >= ?" ,params[:minmember].to_i));
     #@labs = Lab.where("name LIKE ?", "%#{params[:search]}%").where(id: Person.select(:lab_id).group(:lab_id).having(Person.arel_table[:lab_id].count.gteq(params[:minmember].to_i)).having(Person.arel_table[:lab_id].count.lteq(params[:maxmember].to_i)))
