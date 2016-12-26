@@ -6,6 +6,7 @@ class CreateLabs < ActiveRecord::Migration[5.0]
       t.column :message, :string
       t.column :mail, :string
       t.column :theme, :string
+      t.column :theme_detail, :text
       t.timestamps
     end
   end

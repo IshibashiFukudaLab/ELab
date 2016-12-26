@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161226103630) do
+ActiveRecord::Schema.define(version: 20161226163523) do
 
   create_table "colleges", force: :cascade do |t|
     t.string   "name",       null: false
@@ -19,14 +19,38 @@ ActiveRecord::Schema.define(version: 20161226103630) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "labs", force: :cascade do |t|
+  create_table "companies", force: :cascade do |t|
     t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "labs", force: :cascade do |t|
+    t.string   "name",         null: false
     t.string   "teacher"
     t.string   "message"
     t.string   "mail"
     t.string   "theme"
+    t.text     "theme_detail"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "lesson_labs", force: :cascade do |t|
+    t.integer  "lesson_id"
+    t.integer  "lab_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["lab_id"], name: "index_lesson_labs_on_lab_id"
+    t.index ["lesson_id"], name: "index_lesson_labs_on_lesson_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.integer  "college_id"
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["college_id"], name: "index_lessons_on_college_id"
   end
 
   create_table "people", force: :cascade do |t|
