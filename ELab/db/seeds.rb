@@ -108,10 +108,6 @@ Lab.create(college_id: 1,name: "代謝・行動制御額", mail: "")
 # Field.create(name: "建築学")
 
 
-
-
-
-
 Lab.create(college_id: 1,name: "福田研", mail: "ishibashi@f.ait.kyushu-u.ac.jp", teacher: "福田晃", message: "来てください",theme: "組込み")
 Person.create(lab_id: 80, name: "石橋", grade: "M1")
 Person.create(lab_id: 80, name: "古賀", grade: "M2")

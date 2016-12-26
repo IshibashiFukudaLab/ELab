@@ -195,15 +195,42 @@
   }
 
   &__Result {
+    position: relative;
     width: 100%;
     border: 1px solid #e5e5e5;
     box-shadow: 0 3px 8px rgba(0,0,0,.1);
     height: 100px;
-    &__labname {
-      font-size: 2.4rem;
-      padding: $space-unit;
 
+    & a {
+      font-size: 2.4rem;
+      color: #2D3E50;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: $space-unit;
+      @include darken-bg(white);
     }
+  
+  &__data {
+    position: absolute;
+    bottom:$space-unit/2;
+    left: $space-unit;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    & i {
+      font-size: 1.4rem;
+      padding-right: 4px;
+      
+      &:not(:nth-child(1)){
+        padding-left: 10px;
+      }
+    }
+  }
+
 
   }
 
