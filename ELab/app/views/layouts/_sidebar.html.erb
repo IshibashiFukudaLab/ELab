@@ -7,10 +7,10 @@
 
         <dl class="Container__sub__dl">
         <% big_category.each do |big| %>
-          <dt class="Container__sub__dt"><%= big.name %></dt>
+          <dt class="Container__sub__dt" data-big_id=<%= big.id %>><%= big.name %></dt>
           <% small_category = get_small_category_by_id big.id %>
           <% small_category.each do |small| %>
-          <dd class="Container__sub__dd"><%= small.name %></dd>
+          <dd class="Container__sub__dd" data-small_id=<%= big.id %> ><%= small.name %></dd>
           <% end %>
 
       <% end %>
@@ -24,6 +24,21 @@
 
 $('.Container__sub__dd').css('display','none');
 
+$('.Container__sub__dt').on('click',function (e) {
+  // $('.Container__sub__dd').css('display','none');
 
+  const index = $('.Container__sub__dt').index(this)+1;
+  $('[data-small_id='+index+']').toggle()
+
+});
+
+$('.Container__sub__dd').on('click', function (e) {
+
+  const category = $(e.target).text();
+
+  $('.SearchArea__Keywords__input').val(category);
+
+  $('.SearchArea__Submit__button').trigger('click');
+});
 
 </script>

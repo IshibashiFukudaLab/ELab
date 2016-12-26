@@ -16,7 +16,7 @@
         <%= form_tag({:controller => "labs", :action => "index"}, :method => 'get') do %> 
         <div class="SearchArea__Keywords">
           キーワード
-          <%= text_field_tag :search, params[:search], :class =>'input SearchArea__Keywords__input' %>
+          <%= text_field_tag :search, params[:search], :class =>'input SearchArea__Keywords__input'%>
 
         </div>
 
@@ -39,7 +39,7 @@
         </div>
 
         <div class="SearchArea__Submit">
-          <%= button_tag '<i class="fa fa-search" aria-hidden="true"></i>検索'.html_safe, :method =>"submit", :class => 'SearchArea__Footer__submit' %>
+          <%= button_tag '<i class="fa fa-search" aria-hidden="true"></i>検索'.html_safe, :method =>"submit", :class => 'SearchArea__Submit__button' %>
         </div>
 
 
