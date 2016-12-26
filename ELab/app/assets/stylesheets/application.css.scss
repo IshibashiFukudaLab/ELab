@@ -19,10 +19,10 @@
 /* =========================================================
   Foundation
 ========================================================= */
+@import "foundation/variable/variable";
 @import "foundation/base/reset";
 @import "foundation/base/lib/sanitize";
 @import "foundation/base/lib/font-awesome/font-awesome";
-@import "foundation/variable/variable";
 @import "foundation/mixins";
 @import "foundation/layouts/layouts";
 

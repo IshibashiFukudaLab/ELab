@@ -1,69 +1,98 @@
 <p id="notice"><%= notice %></p>
 
 
-
-
 <div class="Header">
-<div class="Header__logo">Elab</div>
+  <div class="Header__logo">Elab</div>
 </div>
 
 
 <div class="Container l-column">
 
   <div class="Container__sub">
-  <div class="Container__sub__title">
-  テーマから探す
-  </div>
-  <ul class="Container__sub__list">
-  <li class="Container__sub__item">テーマ</li>
-  <li class="Container__sub__item">テーマ</li>
-
-
-  </ul>
-
-  </div>
-
-
-
-
-<div class="Container__main">
-  <div class="SearchArea">
-    <div class="SearchArea__title">絞り込む</div>
-
-    <div class="SearchArea__box">
-    キーワード
-
-  <%= form_tag({:controller => "labs", :action => "index"}, :method => 'get') do %> 
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-    </p>
-     <p>
-      <%= number_field_tag :maxmember %>
-      <%= number_field_tag :minmember %>
-    </p>
-    <p>
-      <%= submit_tag "Search", :name => nil %>
-    </p>
-  <% end %>
-
-    <!-- <input type="text" class="input SearchArea__box__input"> -->
-      <!-- <button class="button button-blue button-s">検索</button> -->
+    <div class="Container__sub__title">
+      テーマから探す
     </div>
+    <ul class="Container__sub__list">
+      <li class="Container__sub__item">テーマ</li>
+      <li class="Container__sub__item">テーマ</li>
 
+
+    </ul>
 
   </div>
-  
-  <div class="ResultArea">
-  <div class="ResultArea__title">全◯◯件</div>
+
+
+  <div class="Container__main">
+    <div class="SearchArea">
+      <div class="SearchArea__Contents">
+        <div class="SearchArea__title">絞り込む</div>
+
+        <%= form_tag({:controller => "labs", :action => "index"}, :method => 'get') do %> 
+        <div class="SearchArea__Keywords">
+          キーワード
+          <%= text_field_tag :search, params[:search], :class =>'input SearchArea__Keywords__input' %>
+
+        </div>
+
+        <div class="SearchArea__Conditions">
+
+          <div class="SearchArea__Cource">
+            <div class="SearchArea__Cource__label">文・理</div>
+            <select class="SearchArea__Cource__select">
+              <option value="literature">文系</option>
+              <option value="science">理系</option>
+            </select>
+          </div>
+
+          <div class="SearchArea__NumberOfPeople">
+            <div class="SearchArea__NumberOfPeople__label">在籍人数</div>
+            <%= number_field_tag :maxmember, :class=> "SearchArea__NumberOfPeople__min"%> 人〜
+            <%= number_field_tag :minmember %>人
+          </div>
+
+        </div>
+
+        <div class="SearchArea__Submit">
+          <%= submit_tag '<i class="fa fa-search" aria-hidden="true"></i>検索'.html_safe, :class => 'SearchArea__Footer__submit' %>
+        </div>
+
+
+        <% end %>
+
+
+<!-- 
+
+
+<%= form_tag({:controller => "labs", :action => "index"}, :method => 'get') do %> 
+<p>
+<%= text_field_tag :search, params[:search], :class =>'input SearchArea__Keywords__input' %>
+</p>
+<p>
+</p>
+<p>
+<%= submit_tag "Search", :name => nil %>
+</p>
+<% end %>
+-->
+</div>
+
+</div>
+
+
+<div class="ResultArea">
+  <div class="ResultArea__header">全<span class="ResultArea__header__count">◯</span>件</div>
   <% @labs.each do |lab| %>
 
-  <li class="ResultArea__item"><%= lab.name %></li>
+  <div class="ResultArea__Result">   
+    <div class="ResultArea__Result__labname"><%= lab.name %></div>
+  </div>
+
 
   <% end %>
 
 
 
-  </div>
+</div>
 
 
 </div>
@@ -76,26 +105,26 @@
 <!--
 
 <table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<thead>
+<tr>
+<th colspan="3"></th>
+</tr>
+</thead>
 
-  <tbody>
-    <% @labs.each do |lab| %>
-      <tr>
-        <td><%= lab.name %></td>
-        <td><%= link_to 'Show', lab %></td>
-        <td><%= link_to 'Edit', edit_lab_path(lab) %></td>
-        <td><%= link_to 'Destroy', lab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<tbody>
+<% @labs.each do |lab| %>
+<tr>
+<td><%= lab.name %></td>
+<td><%= link_to 'Show', lab %></td>
+<td><%= link_to 'Edit', edit_lab_path(lab) %></td>
+<td><%= link_to 'Destroy', lab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
+</tbody>
 </table>
 
 
 <%= link_to 'New Lab', new_lab_path %>
-  
+
 
 -->
