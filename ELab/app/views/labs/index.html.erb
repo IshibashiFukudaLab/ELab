@@ -96,11 +96,22 @@
     <div class="ResultArea__Result__labname"><%= lab.name %></div>
   </div>
   <% end %>
-  <% @labslessons.each do |lab| %>
-  <% lab.labs.each do |les|  %>
+
+  <% @labslessons.each do |lesson| %>
+  <% lesson.labs.each do |lab|  %>
   <div class="ResultArea__Result">
     <div class="ResultArea__Result__labname">
-        <%= les.name %>
+        <%= lab.name %>
+    </div>
+  </div>
+  <% end  %>
+  <% end %>
+
+  <% @labscompanies.each do |company| %>
+  <% company.labs.each do |lab|  %>
+  <div class="ResultArea__Result">
+    <div class="ResultArea__Result__labname">
+        <%= lab.name %>
     </div>
   </div>
   <% end  %>

@@ -227,3 +227,5 @@ LessonLab.create(lesson_id: 20, lab_id: 1)
 LessonLab.create(lesson_id: 22, lab_id: 1)
 LessonLab.create(lesson_id: 24, lab_id: 1)
 LessonLab.create(lesson_id: 26, lab_id: 1)
+
+CompanyLab.create(company_id: 1, lab_id: 1)

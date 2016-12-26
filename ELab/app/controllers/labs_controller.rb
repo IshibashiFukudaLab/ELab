@@ -23,7 +23,7 @@ class LabsController < ApplicationController
     @labstheme = Lab.where("theme LIKE ?","%#{params[:search]}%" )
     @labsmessages = Lab.where("message LIKE ?","%#{params[:search]}%")
     @labslessons = Lesson.where("name LIKE ?" , "%#{params[:search]}%")
-
+    @labscompanies = Company.where("name LIKE ?", "%#{params[:search]}%")
 
     #@labs = @labs.where(id: Person.select(:lab_id).group(:lab_id).having("count(lab_id) <= ?", 10).having("count(lab_id) >= ?" ,params[:minmember].to_i));
     #@labs = Lab.where("name LIKE ?", "%#{params[:search]}%").where(id: Person.select(:lab_id).group(:lab_id).having(Person.arel_table[:lab_id].count.gteq(params[:minmember].to_i)).having(Person.arel_table[:lab_id].count.lteq(params[:maxmember].to_i)))
