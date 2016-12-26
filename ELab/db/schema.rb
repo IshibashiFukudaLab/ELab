@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20161226103630) do
     t.string   "teacher"
     t.string   "message"
     t.string   "mail"
+    t.string   "theme"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
