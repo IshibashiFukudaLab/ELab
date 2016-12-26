@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'top/index'
+
+  root to: "top#index"
+
   resources :companies
   resources :lessons
   resources :people

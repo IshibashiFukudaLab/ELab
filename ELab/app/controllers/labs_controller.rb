@@ -21,11 +21,14 @@ class LabsController < ApplicationController
     end
     #@labs = Lab.where("name LIKE ?", "%#{params[:search]}%")
 
+
+    
   end
 
   # GET /labs/1
   # GET /labs/1.json
   def show
+
   end
 
   # GET /labs/new

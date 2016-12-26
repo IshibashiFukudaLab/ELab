@@ -1,4 +1,98 @@
 <p id="notice"><%= notice %></p>
 
+
+
+<div class="Container l-column">
+
+  <%= render 'layouts/sidebar' %>
+
+
+
+  <div class="Container__main">
+
+    <div class="Contents">
+    <div class="Contents__Header">
+      <div class="Contents__Header__title"><%= @lab.name %></div>
+      <div class="Contents__Header__sub">
+        <div class="Contents__Header__place"><i class="fa fa-university" aria-hidden="true"></i>九州大学</div>
+        <div class="Contents__Header__category"><i class="fa fa-tag" aria-hidden="true"></i>組込み,ユビキタス</div>
+      </div>
+    </div>
+
+
+    <div class="Contents__Body">
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">指導教員</div>
+
+        <%= @lab.teacher %>
+
+<!--         <div class="Contents__Teacher__list">
+          <div class="Contents__Teacher__item">福田先生</div>
+          <div class="Contents__Teacher__item">久住先生</div>
+        </div>
+ -->      
+        </div>
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">研究室メンバー</div>
+        <div class="Contents__Teacher__list">
+          <% @lab.people.each do |person| %>
+            <p><%= person.name %>:<%= person.grade %></p>
+          <% end %>
+
+        </div>
+      </div>
+
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">研究テーマ</div>
+
+        <div><%= @lab.theme_detail %></div>
+      </div>
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">関連授業</div>
+        <% @lab.lessons.each do |lesson| %>
+          <p><%= lesson.name %></p>
+        <% end %>
+      </div>
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">主な就職先</div>
+        <% @lab.companies.each do |company| %>
+          <p><%= cpmpany.name %></p>
+        <% end %>
+      </div>
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">基本DATA</div>
+        <div><%= @lab.mail %></div>
+        <div><%= @lab.college.address %></div>
+      </div>
+
+
+
+    </div>
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
 <%= link_to 'Edit', edit_lab_path(@lab) %> |
 <%= link_to 'Back', labs_path %>

@@ -1,0 +1,65 @@
+.Splash {
+
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #EEEFF4;
+  height: 450px;
+
+  &__Main {
+    min-width: 500px;
+    text-align: center;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    &__title{
+      font-size: 3.0rem;
+      padding: $space-unit*2;
+      font-weight: bold;
+      color: #266878;
+      text-shadow: -1px 1px 0 rgba(0,0,0,.2);
+    }
+
+  & input {
+    width: 100%;
+  }
+  }
+
+
+  & img {
+    width: 500px;
+    height: 400px;
+  }
+
+}
+
+.About {
+  margin: $space-unit*2 0;
+  text-align: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  &__title{
+    font-size: 3.0rem;
+  }
+
+  &__message {
+    & table {
+      font-size: 4.0rem;
+      margin: $space-unit auto;
+      & .fa-long-arrow-right {
+        // padding: 0 20px;
+      }
+    }
+  }
+}
