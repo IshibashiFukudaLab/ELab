@@ -18,6 +18,10 @@
     padding: $space-unit $space-unit*1.5;
     font-size: 2.0rem;
     text-shadow: -1px 1px 0 rgba(0,0,0,.1);
+
+    & a {
+      color: white;
+    }
   }
 
 }
@@ -39,16 +43,25 @@
     box-shadow: 0 3px 8px rgba(0,0,0,.1);
     margin-right: $space-unit;
 
-    &__title {
+    &__Contents {
       margin: 8px;
+    }
+    &__title {
       font-size: 1.8rem;
     }
     &__list {
-      margin: 8px;
     }
 
     &__item {
-      padding: 4px;
+      padding: 4px 0;
+      font-weight: bold;
+    }
+
+    &__dt {
+      padding: 8px 0;
+      border-bottom: 1px solid $color-border-gray;
+      @include darken-bg(white);
+
     }
   }
 

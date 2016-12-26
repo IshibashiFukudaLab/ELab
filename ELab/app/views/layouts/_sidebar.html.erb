@@ -1,9 +1,29 @@
   <div class="Container__sub">
-    <div class="Container__sub__title">
-      テーマから探す
-    </div>
+
+    <div class="Container__sub__Contents">
+
     <ul class="Container__sub__list">
-      <li class="Container__sub__item">テーマ</li>
-      <li class="Container__sub__item">テーマ</li>
+      <li class="Container__sub__item">分野から</li>
+
+        <dl class="Container__sub__dl">
+        <% big_category.each do |big| %>
+          <dt class="Container__sub__dt"><%= big.name %></dt>
+          <% small_category = get_small_category_by_id big.id %>
+          <% small_category.each do |small| %>
+          <dd class="Container__sub__dd"><%= small.name %></dd>
+          <% end %>
+
+      <% end %>
+        </dl>
+
     </ul>
+    </div>
   </div>
+
+<script type="text/javascript">
+
+$('.Container__sub__dd').css('display','none');
+
+
+
+</script>
