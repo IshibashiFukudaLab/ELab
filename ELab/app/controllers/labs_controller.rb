@@ -1,5 +1,6 @@
 class LabsController < ApplicationController
   before_action :set_lab, only: [:show, :edit, :update, :destroy]
+  before_action :set_lessons, only: [:edit]
 
   # GET /labs
   # GET /labs.json
@@ -84,7 +85,8 @@ class LabsController < ApplicationController
   # POST /labs.json
   def create
     @lab = Lab.new(lab_params)
-
+    logger.debug("GetWild")
+    logger.debug(@lab.inspect)
     respond_to do |format|
       if @lab.save
         format.html { redirect_to @lab, notice: 'Lab was successfully created.' }
@@ -99,8 +101,22 @@ class LabsController < ApplicationController
   # PATCH/PUT /labs/1
   # PATCH/PUT /labs/1.json
   def update
+    logger.debug("AndTough")
+    #logger.debug(params[:group][:lesson_ids].inspect)
+    params[:group][:lesson_ids].each do |lesson|
+      @lessonlab = LessonLab.new(lesson_id: lesson, lab_id: @lab.id)
+      @lessonlab.save!
+      logger.debug(lesson.to_s)
+    end
+
+
     respond_to do |format|
       if @lab.update(lab_params)
+        params[:group][:lesson_ids].each do |lesson|
+          @lessonlab = LessonLab.new(lesson_id: lesson, lab_id: @lab.id)
+          @lessonlab.save!
+          logger.debug(lesson.to_s)
+        end
         format.html { redirect_to @lab, notice: 'Lab was successfully updated.' }
         format.json { render :show, status: :ok, location: @lab }
       else
@@ -126,8 +142,15 @@ class LabsController < ApplicationController
       @lab = Lab.find(params[:id])
     end
 
+    def set_lessons
+      @lessons = Lesson.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def lab_params
-      params.fetch(:lab, {})
+      #params.fetch(:lab, {})
+      p = params.require(:lab).permit(:name, :teacher, :theme_detail, :lesson_ids)
+      p[:lesson_ids] = [] if p[:lesson_ids].nil?
+      p
     end
 end
