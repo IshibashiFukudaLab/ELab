@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 College.create(name: "九州大学", address: "福岡県福岡市")
-Lab.create(name: "福田研")
+Lab.create(name: "福田研", mail: "ishibashi@f.ait.kyushu-u.ac.jp")
