@@ -18,6 +18,10 @@
     padding: $space-unit $space-unit*1.5;
     font-size: 2.0rem;
     text-shadow: -1px 1px 0 rgba(0,0,0,.1);
+
+    & a {
+      color: white;
+    }
   }
 
 }
@@ -39,16 +43,30 @@
     box-shadow: 0 3px 8px rgba(0,0,0,.1);
     margin-right: $space-unit;
 
-    &__title {
+    &__Contents {
       margin: 8px;
+    }
+    &__title {
       font-size: 1.8rem;
     }
     &__list {
-      margin: 8px;
     }
 
     &__item {
-      padding: 4px;
+      padding: 4px 0;
+      font-weight: bold;
+    }
+
+    &__dt {
+      padding: 8px 0;
+      border-bottom: 1px solid $color-border-gray;
+      @include darken-bg(white);
+    }
+
+    &__dd {
+      padding-left: 8px;
+      text-decoration: underline;
+      @include darken-bg(white);
     }
   }
 
@@ -90,12 +108,7 @@
       margin: 0 $space-unit/2;
     }
 
-    &__submit {
-      display: inline-block;
-      background: #FFD44A;
-      height: 100%;
-
-    }
+ 
   }
 
   &__Conditions {
@@ -154,9 +167,12 @@
     text-align: center;
     color: white;
     width: 80%;
-    margin: $space-unit/2 auto;
-    padding: 8px;
+    margin: $space-unit auto;
 
+    &__button {
+      width: 100%;
+      padding: 10px;
+    }
     @include darken-bg($color-bg-blue);
     & i {
       padding-right: 8px;
