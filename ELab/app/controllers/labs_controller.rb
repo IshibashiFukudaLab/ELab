@@ -9,16 +9,50 @@ class LabsController < ApplicationController
     #在籍人数で検索	
     min = params[:minmember]
     logger.debug(params[:minmember])
-    @labs = Lab.where(id: Person.select(:lab_id).group(:lab_id).having("count(lab_id) <= ?", 10).having("count(lab_id) >= ?" ,params[:minmember].to_i));
+    @labs = Lab.where("name LIKE ?", "%#{params[:search]}%")
+    #if @labs.count < 1
+    #  @labs = Lab.all
+    #end
+
+    @labslabname = Lab.where("name LIKE ?", "%#{params[:search]}%")
+    logger.debug(@labslabname.inspect)
+    @labspersonname = Person.where("name LIKE ?", "%#{params[:search]}%") 
+    @labstheme = Lab.where("theme LIKE ?","%#{params[:search]}%" )
+    @labsmessages = Lab.where("message LIKE ?","%#{params[:search]}%")
+    @labslessons = Lesson.where("name LIKE ?" , "%#{params[:search]}%")
+    @labscompanies = Company.where("name LIKE ?", "%#{params[:search]}%")
+    @labscolleges = College.where("name LIKE ?","%#{params[:search]}%")
+
+    @count = 0    
+
+    @count += @labslabname.count
+    @count += @labspersonname.count
+    @count += @labstheme.count
+    @count += @labsmessages.count
+    @labslessons.each do |lesson|
+      @count += lesson.labs.count
+    end
+    @labscompanies.each do |company|
+      @count += company.labs.count
+    end
+    @labscolleges.each do |college|
+      @count += college.labs.count
+    end
+    logger.debug("カウント：" + @count.to_s)
+
+    #@labs = @labs.where(id: Person.select(:lab_id).group(:lab_id).having("count(lab_id) <= ?", 10).having("count(lab_id) >= ?" ,params[:minmember].to_i));
     #@labs = Lab.where("name LIKE ?", "%#{params[:search]}%").where(id: Person.select(:lab_id).group(:lab_id).having(Person.arel_table[:lab_id].count.gteq(params[:minmember].to_i)).having(Person.arel_table[:lab_id].count.lteq(params[:maxmember].to_i)))
     logger.debug(@labs.inspect)
-    logger.debug(@labs.count)
-    if @labs.count > 0
-      @labs = Lab.all
-      logger.debug("aru")
-    else
-      logger.debug("nuthing!!")
-    end
+    #logger.debug(@labs.count)
+    #@labs = @labs.where("name LIKE ?", "%#{params[:search]}%")
+    logger.debug(@labs.inspect)
+    #if @labs.count > 0
+    #  @labs = Lab.all.where("name LIKE ?", "%#{params[:search]}%")
+    #  logger.debug(@labs.inspect)
+    #  logger.debug("aru")
+    #else
+    #  logger.debug("nuthing!!")
+    #end
     #@labs = Lab.where("name LIKE ?", "%#{params[:search]}%")
 
 

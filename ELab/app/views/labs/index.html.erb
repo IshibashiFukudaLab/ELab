@@ -66,7 +66,7 @@
 
 
 <div class="ResultArea">
-  <div class="ResultArea__header">全<span class="ResultArea__header__count">◯</span>件</div>
+  <div class="ResultArea__header">全<span class="ResultArea__header__count"><%= @count.to_s %></span>件</div>
   <% @labs.each do |lab| %>
 
   <div class="ResultArea__Result">   
@@ -75,9 +75,57 @@
 
 
   <% end %>
+  <% @labspersonname.each do |lab| %>
+  <div class="ResultArea__Result">
+    <div class="ResultArea__Result__labname"><%= lab.name %></div>
+  </div>
+  <% end %>
+  <% @labstheme.each do |lab| %>
+  <div class="ResultArea__Result">
+    <div class="ResultArea__Result__labname"><%= lab.name %></div>
+  </div>
+  <% end %>
+  <% @labslabname.each do |lab| %>
+  <div class="ResultArea__Result">
+    <div class="ResultArea__Result__labname"><%= lab.name %></div>
+  </div>
+  <% end %>
 
+  <% @labsmessages.each do |lab| %>
+  <div class="ResultArea__Result">
+    <div class="ResultArea__Result__labname"><%= lab.name %></div>
+  </div>
+  <% end %>
 
+  <% @labslessons.each do |lesson| %>
+  <% lesson.labs.each do |lab|  %>
+  <div class="ResultArea__Result">
+    <div class="ResultArea__Result__labname">
+        <%= lab.name %>
+    </div>
+  </div>
+  <% end  %>
+  <% end %>
 
+  <% @labscompanies.each do |company| %>
+  <% company.labs.each do |lab|  %>
+  <div class="ResultArea__Result">
+    <div class="ResultArea__Result__labname">
+        <%= lab.name %>
+    </div>
+  </div>
+  <% end  %>
+  <% end %>
+
+  <% @labscolleges.each do |college| %>
+  <% college.labs.each do |lab|  %>
+  <div class="ResultArea__Result">
+    <div class="ResultArea__Result__labname">
+        <%= lab.name %>
+    </div>
+  </div>
+  <% end  %>
+  <% end %>
 </div>
 
 
@@ -104,6 +152,21 @@
 <td><%= link_to 'Show', lab %></td>
 <td><%= link_to 'Edit', edit_lab_path(lab) %></td>
 <td><%= link_to 'Destroy', lab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
+<% @labspersonname.each do |lab| %>
+<tr>
+<td><%= lab.name %></td>
+</tr>
+<% end %>
+<% @labstheme.each do |lab| %>
+<tr>
+<td><%= lab.name %></td>
+</tr>
+<% end %>
+<% @labslabname.each do |lab| %>
+<tr>
+<td><%= lab.name %></td>
 </tr>
 <% end %>
 </tbody>

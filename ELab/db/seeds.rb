@@ -229,7 +229,6 @@ LessonLab.create(lesson_id: 24, lab_id: 1)
 LessonLab.create(lesson_id: 26, lab_id: 1)
 
 
-
 # 研究分野のカテゴリデータの生成
 # ActiveSupport::JSONを使ってhoge.jsonをデコードしてrubyオブジェクトに変換。変数jsonに展開
 json = ActiveSupport::JSON.decode(File.read('./db/category.json'))
@@ -246,3 +245,5 @@ json.each do |data|
   end
   # Hoge.create(column1:data['key1'], column2:data['key4'])
 end
+
+CompanyLab.create(company_id: 1, lab_id: 1)
