@@ -4,10 +4,19 @@
   </div>
   <div class="Splash__Main">
     <div class="Splash__Main__title">素敵なラボ、選ぼ</div>
-    <div class="Splash__Main__input"><input type="text" placeholder="研究室を探してみる (e.g. 九州大学 工学部)" class="input"></div>
+    <div class="Splash__Main__input">
+
+        <%= form_tag({:controller => "labs", :action => "index"}, :method => 'get') do %> 
+
+    <!-- <input type="text" placeholder="" class="input"></div> -->
+          <%= text_field_tag :search, params[:search], :placeholder=>"研究室を探してみる (e.g. 九州大学 工学部)", :class =>'input' %>
+
+
+          <% end %>
+
   </div>
 </div>
-
+  </div>
 <div class="About">
   <div class="About__title">What's ELab？</div>
   <div class="About__message">
@@ -16,12 +25,11 @@
   ELabは，大学の研究室・ゼミの情報を集めたデータベースです。
 
 <table>
-<tr><td><i class="fa fa-university" aria-hidden="true"></i></td><td></td><td></td><td><i class="fa fa-university" aria-hidden="true"></i></td></tr>
-<tr><td height="30px"></td><td><i class="fa fa-long-arrow-right fa-rotate-45" aria-hidden="true"></i></td></tr>
-  <tr><td><i class="fa fa-university" aria-hidden="true"></i></td><td><i class="fa fa-long-arrow-right" aria-hidden="true"></i></td><td><i class="fa fa-database" aria-hidden="true"></i>
-</td></tr>
-<tr><td></td><td><i class="fa fa-long-arrow-right fa-rotate-315" aria-hidden="true"></i></td></tr>
-<tr><td><i class="fa fa-university" aria-hidden="true"></i></td><td></td><td></td><td><i class="fa fa-university" aria-hidden="true"></i></td></tr>
+<tr><td><i class="fa fa-university" aria-hidden="true"></i></td><td></td><td></td><td></td><td><i class="fa fa-university" aria-hidden="true"></i></td></tr>
+<tr><td></td><td><i class="fa fa-long-arrow-right fa-rotate-45" aria-hidden="true"></i></td><td></td><td><i class="fa fa-long-arrow-right fa-rotate-135" aria-hidden="true"></i></td><td></td></tr>
+<tr><td><i class="fa fa-university" aria-hidden="true"></i></td><td><i class="fa fa-long-arrow-right" aria-hidden="true"></i></td><td><i class="fa fa-database" aria-hidden="true"></i></td><td><i class="fa fa-long-arrow-right fa-rotate-180" aria-hidden="true"></td><td><i class="fa fa-university" aria-hidden="true"></i></td></tr>
+<tr><td></td><td><i class="fa fa-long-arrow-right fa-rotate-315" aria-hidden="true"></i></td><td></td><td><i class="fa fa-long-arrow-right fa-rotate-225" aria-hidden="true"></i></td></tr>
+<tr><td><i class="fa fa-university" aria-hidden="true"></i></td><td></td><td></td><td></td><td><i class="fa fa-university" aria-hidden="true"></i></td></tr>
 </table>
 
 
