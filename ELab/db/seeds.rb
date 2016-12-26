@@ -11,7 +11,7 @@ College.create(name: "九州大学", address: "福岡県福岡市")
 Undergraduate.create(name: "工学部", major: "電気情報工学科")
 Undergraduate.create(name: "農学部")
 
-Major.create(name: "生物資源環境学科")
+# Major.create(name: "生物資源環境学科")
 
 # Field.create(name: "農学分野")
 # Field.create(name: "生物生産環境工学分野")
@@ -112,7 +112,7 @@ Lab.create(name: "代謝・行動制御額", mail: "")
 
 
 
-Lab.create(name: "福田研", mail: "ishibashi@f.ait.kyushu-u.ac.jp", teacher: 1, message: "来てください",theme: "組込み")
+Lab.create(name: "福田研", mail: "ishibashi@f.ait.kyushu-u.ac.jp", teacher: "福田晃", message: "来てください",theme: "組込み")
 Person.create(lab_id: 1, name: "石橋", grade: "M1")
 
 Lab.create(name: "福田研", mail: "ishibashi@f.ait.kyushu-u.ac.jp", teacher: 1, message: "来てください",theme: "組込み")
