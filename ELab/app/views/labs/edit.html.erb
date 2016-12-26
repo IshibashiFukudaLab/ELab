@@ -2,5 +2,42 @@
 
 <%= render 'form', lab: @lab %>
 
-<%= link_to 'Show', @lab %> |
-<%= link_to 'Back', labs_path %>
+<%= form_for(@lab) do |f| %>
+  <%= f.label :name, "研究室名" %>
+  <%= f.text_field :name %>
+
+  <!-- 先生 -->
+  <%= f.text_field :teacher %>
+
+  <!-- 基本データ-->
+  <%= f.text_field :mail  %>
+  <%= f.text_field :address  %>  
+
+  <!-- メンバー -->
+
+
+  <!-- テーマ-->
+  <%= f.text_area :theme_detail  %>
+
+  <!-- メッセージ-->
+  <%= f.text_area :message  %>
+
+  <!-- 関連授業 -->
+  
+  <% @lessons.each do |lesson| %>
+  <% checked = lesson.labs.exists?(@lab.id) ? true : false %>
+  <%= f.check_box 'lesson_ids', { :name => 'group[lesson_ids][]', :checked => checked }, lesson.id, nil %>
+  <%= lesson.name %>
+  <% end %>
+
+  <!-- 関連企業 -->
+
+  <% @companies.each do |company| %>
+  <% checked = company.labs.exists?(@lab.id) ? true : false %>
+  <%= f.check_box 'company_ids', { :name => 'group[company_ids][]', :checked => checked }, company.id, nil %>
+  <%= company.name %>
+  <% end %>
+
+
+  <%= f.submit "Send" %>
+<% end %>
