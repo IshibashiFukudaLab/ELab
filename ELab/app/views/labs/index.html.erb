@@ -2,6 +2,7 @@
 
 
 
+
 <div class="Header">
 <div class="Header__logo">Elab</div>
 </div>
@@ -31,13 +32,17 @@
 
     <div class="SearchArea__box">
     キーワード
-    <input type="text" class="input SearchArea__box__input">
-      <button class="button button-blue button-s">検索</button>
+
+  <%= form_tag({:controller => "labs", :action => "index"}, :method => 'get') do %> 
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
+
+    <!-- <input type="text" class="input SearchArea__box__input"> -->
+      <!-- <button class="button button-blue button-s">検索</button> -->
     </div>
-
-
-
-
 
 
   </div>
@@ -62,12 +67,7 @@
 </div>
 
 
-
-
-
-
 <!--
-<h1>Labs</h1>
 
 <table>
   <thead>
@@ -88,8 +88,8 @@
   </tbody>
 </table>
 
-<br>
 
 <%= link_to 'New Lab', new_lab_path %>
+  
 
 -->
