@@ -46,14 +46,14 @@
 
           <div class="SearchArea__NumberOfPeople">
             <div class="SearchArea__NumberOfPeople__label">在籍人数</div>
-            <%= number_field_tag :maxmember, :class=> "SearchArea__NumberOfPeople__min"%> 人〜
-            <%= number_field_tag :minmember %>人
+            <%= number_field_tag :minmember %>人 〜
+            <%= number_field_tag :maxmember, :class=> "SearchArea__NumberOfPeople__min"%> 人
           </div>
 
         </div>
 
         <div class="SearchArea__Submit">
-          <%= submit_tag '<i class="fa fa-search" aria-hidden="true"></i>検索'.html_safe, :class => 'SearchArea__Footer__submit' %>
+          <%= button_tag '<i class="fa fa-search" aria-hidden="true"></i>検索'.html_safe, :method =>"submit", :class => 'SearchArea__Footer__submit' %>
         </div>
 
 
