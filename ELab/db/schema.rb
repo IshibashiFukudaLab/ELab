@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161226171904) do
+ActiveRecord::Schema.define(version: 20161226200917) do
+
+  create_table "big_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "colleges", force: :cascade do |t|
     t.string   "name",       null: false
@@ -71,6 +77,14 @@ ActiveRecord::Schema.define(version: 20161226171904) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lab_id"], name: "index_people_on_lab_id"
+  end
+
+  create_table "small_categories", force: :cascade do |t|
+    t.integer  "big_category_id"
+    t.string   "name"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["big_category_id"], name: "index_small_categories_on_big_category_id"
   end
 
 end
