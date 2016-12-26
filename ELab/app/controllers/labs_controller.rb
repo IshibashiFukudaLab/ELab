@@ -4,7 +4,15 @@ class LabsController < ApplicationController
   # GET /labs
   # GET /labs.json
   def index
-    @labs = Lab.search(params[:search])
+    #@labs = Lab.search(params[:search])
+    #@labs = Lab.joins(:people).merge(Person.where(id: 1))
+    #在籍人数で検索	
+    min = params[:minmember]
+    logger.debug(params[:minmember])
+    #@labs = Lab.where(id: Person.select(:lab_id).group(:lab_id).having("count(lab_id) <= ?", 10).having("count(lab_id) >= ?" ,"%#{params[:minmember]}"));
+    @labs = Lab.where(id: Person.select(:lab_id).group(:lab_id).having(Person.arel_table[:lab_id].count.gteq(params[:minmember].to_i)).having(Person.arel_table[:lab_id].count.lteq(params[:maxmember].to_i)))
+    #@labs = Lab.where("name LIKE ?", "%#{params[:search]}%")
+
   end
 
   # GET /labs/1

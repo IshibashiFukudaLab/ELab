@@ -36,6 +36,12 @@
   <%= form_tag({:controller => "labs", :action => "index"}, :method => 'get') do %> 
     <p>
       <%= text_field_tag :search, params[:search] %>
+    </p>
+     <p>
+      <%= number_field_tag :maxmember %>
+      <%= number_field_tag :minmember %>
+    </p>
+    <p>
       <%= submit_tag "Search", :name => nil %>
     </p>
   <% end %>

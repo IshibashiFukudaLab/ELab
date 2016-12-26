@@ -1,4 +1,6 @@
 class Lab < ApplicationRecord
+  has_many :people
+
   def self.search(search)
     if search
       Lab.where(['name LIKE ?', "%#{search}%"])
