@@ -1,3 +1,63 @@
 // Place all the styles related to the labs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+
+}
+
+
+.Header {
+  height: 60px;  
+  border-bottom: 1px solid $color-border-gray;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    padding: $space-unit;
+
+  }
+
+}
+
+
+.Container {
+
+
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+
+  margin-top: $space-unit*2;
+  &__sub {
+    width: $sub-width;
+  }
+
+
+}
+
+.SearchArea {
+  height: 200px;
+  background: #f6f6f6;
+
+
+}
+
+.ResultArea {
+  
+  // &__item {
+  //   padding: 20px;
+
+
+  // }
+
+
+}
+
+

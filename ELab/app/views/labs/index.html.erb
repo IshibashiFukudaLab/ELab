@@ -1,5 +1,72 @@
 <p id="notice"><%= notice %></p>
 
+
+
+<div class="Header">
+<div class="Header__logo">Elab</div>
+</div>
+
+
+<div class="Container l-column">
+
+  <div class="Container__sub">
+  <div class="Container__sub__title">
+  テーマから探す
+  </div>
+  <ul class="Container__sub__list">
+  <li class="Container__sub__item">テーマ</li>
+  <li class="Container__sub__item">テーマ</li>
+
+
+  </ul>
+
+  </div>
+
+
+
+
+<div class="Container__main">
+  <div class="SearchArea">
+    <div class="SearchArea__title">絞り込む</div>
+
+    <div class="SearchArea__box">
+    キーワード
+    <input type="text" class="input SearchArea__box__input">
+      <button class="button button-blue button-s">検索</button>
+    </div>
+
+
+
+
+
+
+  </div>
+  
+  <div class="ResultArea">
+  <div class="ResultArea__title">全◯◯件</div>
+  <% @labs.each do |lab| %>
+
+  <li class="ResultArea__item"><%= lab.name %></li>
+
+  <% end %>
+
+
+
+  </div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!--
 <h1>Labs</h1>
 
 <table>
@@ -24,3 +91,5 @@
 <br>
 
 <%= link_to 'New Lab', new_lab_path %>
+
+-->

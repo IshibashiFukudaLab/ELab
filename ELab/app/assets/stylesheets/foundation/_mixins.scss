@@ -1,0 +1,33 @@
+@mixin mq-sp($max: $sp-max-width){
+  @media only screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+@mixin mq-pc($min: $pc-min-width){
+  @media only screen and (min-width: #{$min}) {
+    @content;
+  }
+}
+
+
+@mixin darken-bg($bg) {
+  background: $bg;
+  &:hover {
+    background: darken($bg,8%);
+    transition: all 0.3s ease;
+  }
+}
+
+
+@mixin leftBorder-title {
+  font-size: 2rem;
+  border-left: 10px solid #85023e;
+  margin-right: 60px;
+  padding: 8px 0 8px 8px;
+  background-color: #fbf7f3;
+}
+
+@mixin b-shadow($shadow:.1) {
+  box-shadow: 0px 3px 15px rgba(0,0,0,$shadow);
+}
