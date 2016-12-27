@@ -73,6 +73,7 @@ class ChatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chat_params
-      params.fetch(:chat, {})
+      #params.fetch(:chat, {})
+      params.require(:chat).permit(:lab_id, :username, :message)
     end
 end

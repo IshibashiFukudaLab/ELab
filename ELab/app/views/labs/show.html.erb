@@ -88,9 +88,30 @@
     </div>
 
   </div>
+  
+  <!-- 掲示板部分 -->
 
+  <%= form_for @chat do |f| %>
 
+    <%= f.hidden_field :lab_id,:value => @lab.id %>
 
+    <%= f.label :username, "名前" %>
+    <%= f.text_field :username %>
+
+    <%= f.label :message, "本文" %>
+    <%= f.text_field :message %>
+
+    <%= f.submit "Send" %>
+  <% end %>
+
+  <% form_tag({:controller => "chats", :action => "new"}) %>
+  <% @chats.each do |chat| %>
+    <p><%= chat.created_at.strftime('%Y年%m月%d日 %H:%M:%S') %></p>
+    <p><%= chat.username %></p>
+    <p><%= chat.message %></p>
+  <% end %>
+
+  <!-- ここまで-->
 
 
 </div>

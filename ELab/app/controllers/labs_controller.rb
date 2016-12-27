@@ -73,7 +73,8 @@ class LabsController < ApplicationController
   # GET /labs/1
   # GET /labs/1.json
   def show
-
+    @chats = Chat.where(lab_id: @lab.id).order(created_at: :desc)
+    @chat = Chat.new
   end
 
   # GET /labs/new
