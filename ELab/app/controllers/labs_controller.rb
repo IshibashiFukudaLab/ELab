@@ -24,7 +24,8 @@ class LabsController < ApplicationController
     @labslessons = Lesson.where("name LIKE ?" , "%#{params[:search]}%")
     @labscompanies = Company.where("name LIKE ?", "%#{params[:search]}%")
     @labscolleges = College.where("name LIKE ?","%#{params[:search]}%")
-
+    @labscategories = SmallCategory.where("name LIKE ?","%#{params[:search]}%")
+  
     @count = 0    
 
     @count += @labslabname.count
@@ -39,6 +40,9 @@ class LabsController < ApplicationController
     end
     @labscolleges.each do |college|
       @count += college.labs.count
+    end
+    @labscategories.each do |category|
+      @count += category.labs.count
     end
     logger.debug("カウント：" + @count.to_s)
 
@@ -112,6 +116,7 @@ class LabsController < ApplicationController
         if !params[:lab][:people_attributes].nil?
           logger.debug("一人では解けない愛のパズルを抱いて")
           params[:lab][:people_attributes].each do |per,pval|
+            
             @person = Person.new(lab_id: @lab.id ,name: pval["name"], grade: pval["grade"])
             @person.save
             @peoplelab = PeopleLab.new(people_id: @person.id, labs_id: @lab.id)

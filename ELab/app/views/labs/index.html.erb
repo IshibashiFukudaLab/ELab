@@ -138,6 +138,16 @@
   </div>
   <% end  %>
   <% end %>
+
+  <% @labscategories.each do |category| %>
+  <% category.labs.each do |lab|  %>
+  <div class="ResultArea__Result" data-lab_id=<%=lab.id%>>
+    <div class="ResultArea__Result__labname">
+        <%= link_to lab.name, lab %>
+    </div>
+  </div>
+  <% end  %>
+  <% end %>
 </div>
 
 
