@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chats
   get 'top/index'
 
   root to: "top#index"

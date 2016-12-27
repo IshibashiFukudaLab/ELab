@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161227024913) do
+ActiveRecord::Schema.define(version: 20161227033119) do
 
   create_table "big_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.integer  "lab_id"
+    t.integer  "user_id"
+    t.string   "username"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lab_id"], name: "index_chats_on_lab_id"
   end
 
   create_table "colleges", force: :cascade do |t|
