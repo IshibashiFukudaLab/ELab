@@ -50,16 +50,22 @@
   display: flex;
   flex-direction: column;
   &__title{
-    font-size: 3.0rem;
+    font-size: 5.0rem;
+    padding: $space-unit 0;
   }
 
-  &__message {
-    & table {
-      font-size: 4.0rem;
-      margin: $space-unit auto;
-      & .fa-long-arrow-right {
-        // padding: 0 20px;
-      }
+
+  & table {
+    font-size: 4.0rem;
+    margin: $space-unit auto;
+    & .fa-university {
+      color: #2D3E50;
     }
+    & .fa-database {
+      color: #FFD44A;
+    }
+
+
+
   }
 }
