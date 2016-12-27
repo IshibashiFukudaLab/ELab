@@ -2,7 +2,7 @@
 
 <%= render 'form', lab: @lab %>
 
-<%= form_for(@lab) do |f| %>
+<%= nested_form_for(@lab) do |f| %>
   <%= f.label :name, "研究室名" %>
   <%= f.text_field :name %>
 
@@ -11,10 +11,16 @@
 
   <!-- 基本データ-->
   <%= f.text_field :mail  %>
-  <%= f.text_field :address  %>  
-
+  <!--%= f.text_field :address %-->  
+  <br>
   <!-- メンバー -->
-
+  <%= f.fields_for :people do |task_form| %>
+    <%= task_form.text_field :name %>
+    <%= task_form.text_field :grade %>
+    <%= task_form.link_to_remove "Remove this" %>
+  <% end %>
+  <%= f.link_to_add "Add task", :people %>
+  <br>
 
   <!-- テーマ-->
   <%= f.text_area :theme_detail  %>
