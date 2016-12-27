@@ -1,14 +1,18 @@
 
 <div class="Edit">
 
+
 <div class="Edit__title">編集</div>
-  <%= form_for(@lab) do |f| %>
+
+<%= nested_form_for(@lab) do |f| %>
   
   <div class="Edit__Section">
     <div class="Edit__Section__title">研究室名</div>
       <%= f.text_field :name, :class=>"input" %>
   </div>
   <!-- <%= f.label :name, "研究室名" %> -->
+
+
 
   <!-- 先生 -->
   <div class="Edit__Section">
@@ -18,13 +22,22 @@
 
   <!-- 基本データ-->
 
+
   <div class="Edit__Section">
     <div class="Edit__Section__title">基本データ</div>
       <%= f.text_field :mail, :class=>"input" %>
   </div>
 
   <!-- メンバー -->
-
+  <div class="Edit__Section">
+    <div class="Edit__Section__title">メンバー</div>
+  <%= f.fields_for :people do |task_form| %>
+    <%= task_form.text_field :name, :class=>"input" %>
+    <%= task_form.text_field :grade, :class=>"input"  %>
+    <%= task_form.link_to_remove "メンバーを削除" %>
+  <% end %>
+  <%= f.link_to_add "メンバーを追加", :people %>
+  </div>
 
   <!-- テーマ-->
   <div class="Edit__Section">

@@ -108,15 +108,39 @@ class LabsController < ApplicationController
 
     respond_to do |format|
       if @lab.update(lab_params)
+        logger.debug("GetWildAndTough")
+        if !params[:lab][:people_attributes].nil?
+          logger.debug("一人では解けない愛のパズルを抱いて")
+          params[:lab][:people_attributes].each do |per,pval|
+            @person = Person.new(lab_id: @lab.id ,name: pval["name"], grade: pval["grade"])
+            @person.save
+            @peoplelab = PeopleLab.new(people_id: @person.id, labs_id: @lab.id)
+            @peoplelab.save
+          end
+        end
+
+        if !params[:group].nil?
+        if !params[:group][:lesson_ids].nil?
         params[:group][:lesson_ids].each do |lesson|
           @lessonlab = LessonLab.new(lesson_id: lesson, lab_id: @lab.id)
-          @lessonlab.save!
+          @lessonlab.save
           logger.debug(lesson.to_s)
         end
+        end
+        end
+
+        if !params[:group].nil?
+        if !params[:group][:company_id].nil?
         params[:group][:company_ids].each do |company|
           @companylab = CompanyLab.new(company_id: company, lab_id: @lab.id)
           @companylab.save
+
         end
+        end
+
+        end
+	
+	sleep(1)
         format.html { redirect_to @lab, notice: 'Lab was successfully updated.' }
         format.json { render :show, status: :ok, location: @lab }
       else
@@ -153,7 +177,7 @@ class LabsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def lab_params
       #params.fetch(:lab, {})
-      p = params.require(:lab).permit(:name, :teacher, :theme_detail, :lesson_ids)
+      p = params.require(:lab).permit(:name, :teacher, :theme_detail, :lesson_ids => [])
       p[:lesson_ids] = [] if p[:lesson_ids].nil?
       p
     end
