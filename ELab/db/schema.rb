@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161227011643) do
+ActiveRecord::Schema.define(version: 20161227024913) do
 
   create_table "big_categories", force: :cascade do |t|
     t.string   "name"
@@ -95,6 +95,15 @@ ActiveRecord::Schema.define(version: 20161227011643) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["big_category_id"], name: "index_small_categories_on_big_category_id"
+  end
+
+  create_table "small_category_labs", force: :cascade do |t|
+    t.integer  "small_category_id"
+    t.integer  "lab_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["lab_id"], name: "index_small_category_labs_on_lab_id"
+    t.index ["small_category_id"], name: "index_small_category_labs_on_small_category_id"
   end
 
 end

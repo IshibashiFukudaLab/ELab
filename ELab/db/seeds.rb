@@ -238,3 +238,5 @@ json.each do |data|
 end
 
 CompanyLab.create(company_id: 1, lab_id: 1)
+SmallCategoryLab.create(small_category_id: 1, lab_id: 2)
+SmallCategoryLab.create(small_category_id: 1, lab_id: 1)
