@@ -10,7 +10,7 @@
           <dt class="Container__sub__dt" data-big_id=<%= big.id %>><%= big.name %></dt>
           <% small_category = get_small_category_by_id big.id %>
           <% small_category.each do |small| %>
-          <dd class="Container__sub__dd" data-small_id=<%= big.id %> ><%= small.name %></dd>
+          <dd class="Container__sub__dd" data-small_id=<%= big.id %> ><%= link_to small.name, {:controller => "labs", :action => "index", :search => "#{small.name}"} %></dd>
           <% end %>
 
       <% end %>
