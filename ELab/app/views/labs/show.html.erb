@@ -73,6 +73,45 @@
         <% end %>
       </div>
 
+
+  <!-- 掲示板部分 -->
+
+  <%= form_for @chat do |f| %>
+
+    <%= f.hidden_field :lab_id,:value => @lab.id %>
+
+    <div class="Contents__Section">
+
+        <div class="Contents__Section__title">掲示板</div>
+
+        <div class="Contents__Board">
+
+        <div class="Contents__Board__Log">
+          <% form_tag({:controller => "chats", :action => "new"}) %>
+          <% @chats.each do |chat| %>
+            <p class="Contents__Board__Log__time"><%= chat.created_at.in_time_zone('Tokyo').strftime('%Y年%m月%d日 %H:%M:%S') %></p>
+            <p class="Contents__Board__Log__userName"><%= chat.username %></p>
+            <p class="Contents__Board__Log__message"><%= chat.message %></p>
+          <% end %>
+        </div>
+
+          <%= f.label :username, "名前" %>
+          <%= f.text_field :username, :class=>"input Contents__Board__input" %>
+
+          <%= f.label :message, "本文" %>
+          <%= f.text_area :message, :class=>"input Contents__Board__textarea"%>
+
+          <div class="Contents__Board__Footer">
+          <%= f.submit "Send" %>
+          </div>
+
+        </div>
+
+    </div>
+  <% end %>
+
+
+
       <div class="Contents__Section">
         <div class="Contents__Section__title">基本DATA</div>
         <div><%= @lab.mail %></div>
@@ -88,9 +127,7 @@
     </div>
 
   </div>
-
-
-
+  
 
 
 </div>

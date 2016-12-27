@@ -32,7 +32,7 @@ class ChatsController < ApplicationController
 
     respond_to do |format|
       if @chat.save
-        format.html { redirect_to @chat, notice: 'Chat was successfully created.' }
+        format.html { redirect_to request.referer, notice: 'Chat was successfully created.' }
         format.json { render :show, status: :created, location: @chat }
       else
         format.html { render :new }
@@ -73,6 +73,7 @@ class ChatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chat_params
-      params.fetch(:chat, {})
+      #params.fetch(:chat, {})
+      params.require(:chat).permit(:lab_id, :username, :message)
     end
 end

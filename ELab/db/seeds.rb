@@ -240,3 +240,6 @@ end
 CompanyLab.create(company_id: 1, lab_id: 1)
 SmallCategoryLab.create(small_category_id: 1, lab_id: 2)
 SmallCategoryLab.create(small_category_id: 1, lab_id: 1)
+Chat.create(lab_id: 1, username: "石橋", message: "Get Wild and Tough!!")
+Chat.create(lab_id: 1, username: "古賀", message: "一人では解けない愛のパズルを抱いて")
+Chat.create(lab_id: 1, username: "江藤", message: "この街で優しさに甘えていたくはない")

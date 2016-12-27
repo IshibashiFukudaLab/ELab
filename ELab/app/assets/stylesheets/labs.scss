@@ -279,11 +279,62 @@
     position: absolute;
     top: 0;
     right: 0;
-
-
-
   }
 
+  &__Board {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    margin-top: $space-unit;
+
+    &__Log {
+      margin-bottom: $space-unit;
+
+      &__time {
+        padding-top: $space-unit/2;
+        color: $color-gray-text;
+        font-size: 1.4rem;
+      }
+
+      &__userName {
+        font-weight: bold;
+      }
+
+      &__message {
+        padding-bottom: $space-unit/2;
+        border-bottom: 1px dashed $color-border-gray;
+      }
+
+    }
+
+
+
+    &__input {
+      width: 80%;
+    }
+
+    &__textarea {
+      width: 80%;
+      min-height: 200px;
+    }
+
+    &__Footer {
+      width: 80%;
+      text-align: right;
+
+      & input {
+        background: $btn-blue;
+        color: white;
+        padding: 8px 12px;
+        @include darken-bg($btn-blue);
+        margin-top: $space-unit;
+
+      }
+    }
+  }
 }
 
 .Edit {
