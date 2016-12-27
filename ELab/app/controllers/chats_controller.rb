@@ -5,7 +5,7 @@ class ChatsController < ApplicationController
   # GET /chats.json
   def index
     if !params[:lab_id].nil?
-      @chats = Chat.where(lab_id: params[:lab_id]).order(:created)
+      @chats = Chat.where(lab_id: params[:lab_id]).order(created_at: :desc)
     else
       @chats = Chat.all
     end

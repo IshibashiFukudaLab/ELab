@@ -10,7 +10,7 @@ class LabsController < ApplicationController
     #@labs = Lab.joins(:people).merge(Person.where(id: 1))
     #在籍人数で検索
     if params[:search].nil?
-      @labs = Lab:all
+      @labs = Lab.all
       @labslabname = nil
     end
 	
