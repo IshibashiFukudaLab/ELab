@@ -1,49 +1,85 @@
-<h1>Editing Lab</h1>
 
-<%= render 'form', lab: @lab %>
+<div class="Edit">
+
+
+<div class="Edit__title">編集</div>
 
 <%= nested_form_for(@lab) do |f| %>
-  <%= f.label :name, "研究室名" %>
-  <%= f.text_field :name %>
+  
+  <div class="Edit__Section">
+    <div class="Edit__Section__title">研究室名</div>
+      <%= f.text_field :name, :class=>"input" %>
+  </div>
+  <!-- <%= f.label :name, "研究室名" %> -->
+
+
 
   <!-- 先生 -->
-  <%= f.text_field :teacher %>
+  <div class="Edit__Section">
+    <div class="Edit__Section__title">指導教員</div>
+    <%= f.text_field :teacher, :class=>"input" %>
+  </div>
 
   <!-- 基本データ-->
-  <%= f.text_field :mail  %>
-  <!--%= f.text_field :address %-->  
-  <br>
+
+
+  <div class="Edit__Section">
+    <div class="Edit__Section__title">基本データ</div>
+      <%= f.text_field :mail, :class=>"input" %>
+  </div>
+
   <!-- メンバー -->
+  <div class="Edit__Section">
+    <div class="Edit__Section__title">メンバー</div>
   <%= f.fields_for :people do |task_form| %>
-    <%= task_form.text_field :name %>
-    <%= task_form.text_field :grade %>
-    <%= task_form.link_to_remove "Remove this" %>
+    <%= task_form.text_field :name, :class=>"input" %>
+    <%= task_form.text_field :grade, :class=>"input"  %>
+    <%= task_form.link_to_remove "メンバーを削除" %>
   <% end %>
-  <%= f.link_to_add "Add task", :people %>
-  <br>
+  <%= f.link_to_add "メンバーを追加", :people %>
+  </div>
 
   <!-- テーマ-->
-  <%= f.text_area :theme_detail  %>
+  <div class="Edit__Section">
+    <div class="Edit__Section__title">研究テーマ</div>
+      <%= f.text_area :theme_detail, :class=>"input", :width=>"300px" %>
+  </div>
+
 
   <!-- メッセージ-->
-  <%= f.text_area :message  %>
+  <div class="Edit__Section">
+    <div class="Edit__Section__title">メッセージ</div>
+      <%= f.text_area :message, :class=>"input" %>
+  </div>
 
   <!-- 関連授業 -->
+  <div class="Edit__Section">
+    <div class="Edit__Section__title">関連授業</div>
+    <div class="Edit__Lessons">
+      <% @lessons.each do |lesson| %>
+      <% checked = lesson.labs.exists?(@lab.id) ? true : false %>
+      <div><%= f.check_box 'lesson_ids', { :name => 'group[lesson_ids][]', :checked => checked }, lesson.id, nil %>
+<%= lesson.name %></div>
+      <% end %>
+    </div>
+  </div>
   
-  <% @lessons.each do |lesson| %>
-  <% checked = lesson.labs.exists?(@lab.id) ? true : false %>
-  <%= f.check_box 'lesson_ids', { :name => 'group[lesson_ids][]', :checked => checked }, lesson.id, nil %>
-  <%= lesson.name %>
-  <% end %>
 
   <!-- 関連企業 -->
+  <div class="Edit__Section">
+    <div class="Edit__Section__title">主な就職先</div>
+      <% @companies.each do |company| %>
+      <% checked = company.labs.exists?(@lab.id) ? true : false %>
+      <%= f.check_box 'company_ids', { :name => 'group[company_ids][]', :checked => checked }, company.id, nil %>
+      <%= company.name %>
+      <% end %>
+  </div>
 
-  <% @companies.each do |company| %>
-  <% checked = company.labs.exists?(@lab.id) ? true : false %>
-  <%= f.check_box 'company_ids', { :name => 'group[company_ids][]', :checked => checked }, company.id, nil %>
-  <%= company.name %>
+  <div class="Edit__Footer">
+    <%= f.submit "Update" ,:class=>"input" %>
+
+
+  </div>
   <% end %>
 
-
-  <%= f.submit "Send" %>
-<% end %>
+</div>

@@ -144,8 +144,10 @@ class LabsController < ApplicationController
         params[:group][:company_ids].each do |company|
           @companylab = CompanyLab.new(company_id: company, lab_id: @lab.id)
           @companylab.save
+
         end
         end
+
         end
 	
 	sleep(1)
@@ -175,7 +177,7 @@ class LabsController < ApplicationController
     end
 
     def set_lessons
-      @lessons = Lesson.all
+      @lessons = Lesson.order(:kana)
     end
 
     def set_companies

@@ -51,7 +51,7 @@
 
 
 <div class="ResultArea">
-  <div class="ResultArea__header">全<span class="ResultArea__header__count"><%= @count.to_s %></span>件</div>
+  <div class="ResultArea__header">全<span class="ResultArea__header__count"></span>件</div>
   <% @labs.each do |lab| %>
   <div class="ResultArea__Result" data-lab_id=<%=lab.id%>>
     <%= link_to lab.name, lab %>
@@ -157,19 +157,24 @@
 
 <script type="text/javascript">
 
-$elements = $('.ResultArea__Result')
+$elements = $('.ResultArea__Result');
 var li = [];
 for (var i=0; i<$elements.length; i++) {
   var lab_id = $elements.eq(i).data('lab_id');
-  li.push(lab_id)
+
   if (li.indexOf(lab_id) >= 0) {
     // 重複を検出
     // 末尾の削除
-    li.pop()
-    $('[data-lab_id='+lab_id+']').eq(1).remove();
-  
+    $('[data-lab_id='+lab_id+']').eq(1).remove();  
+  } else {
+    li.push(lab_id);
   }
 }
+
+const count = li.length;
+console.log(li)
+console.log(count)
+$('.ResultArea__header__count').html(count);
 
   
 </script>

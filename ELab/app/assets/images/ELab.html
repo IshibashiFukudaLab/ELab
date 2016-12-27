@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost:3000/labs/1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ELab</title>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="GxKmOtPu5XVnfxhDsnDZMRUPciyD/TJfwp+ElTUR2OOudfdncAIqV8nqjFZPAUCes0g3sBCMwKGs6dl0OxdowA==">
+    <link rel="stylesheet" media="screen" href="./ELab_files/font-awesome.min.css">
+    <link rel="stylesheet" media="all" href="./ELab_files/application.self-94a1034798feab77643dd3bf5e087bfb4d5d8c2590f6f8f05e8baeb8c823eae5.css" data-turbolinks-track="reload">
+    <script src="./ELab_files/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/action_cable.self-17ebe4af84895fa064a951f57476799066237d7bb5dc4dc351a8b01cca19cce9.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/colleges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/companies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/labs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/lessons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/people.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/top.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./ELab_files/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js" data-turbolinks-track="reload"></script>
+  <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+  <body cz-shortcut-listen="true">
+  <div class="Header">
+    <div class="Header__logo"><a href="http://localhost:3000/">Elab</a></div>
+  </div>
+
+    
+
+
+
+<div class="Container l-column">
+
+    <div class="Container__sub">
+
+    <div class="Container__sub__Contents">
+
+    <ul class="Container__sub__list">
+      <li class="Container__sub__item">分野から</li>
+
+        <dl class="Container__sub__dl">
+          <dt class="Container__sub__dt" data-big_id="1">哲学</dt>
+          <dd class="Container__sub__dd" data-small_id="1" style="display: none;">哲学・倫理学</dd>
+          <dd class="Container__sub__dd" data-small_id="1" style="display: none;">中国哲学</dd>
+          <dd class="Container__sub__dd" data-small_id="1" style="display: none;">印度哲学・仏教学</dd>
+          <dd class="Container__sub__dd" data-small_id="1" style="display: none;">宗教学</dd>
+          <dd class="Container__sub__dd" data-small_id="1" style="display: none;">思想史</dd>
+          <dd class="Container__sub__dd" data-small_id="1" style="display: none;">美学・美術史</dd>
+
+          <dt class="Container__sub__dt" data-big_id="2">史学</dt>
+          <dd class="Container__sub__dd" data-small_id="2" style="display: none;">史学一般</dd>
+          <dd class="Container__sub__dd" data-small_id="2" style="display: none;">日本史</dd>
+          <dd class="Container__sub__dd" data-small_id="2" style="display: none;">東洋史</dd>
+          <dd class="Container__sub__dd" data-small_id="2" style="display: none;">西洋史</dd>
+          <dd class="Container__sub__dd" data-small_id="2" style="display: none;">考古学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="3">人文地理学</dt>
+          <dd class="Container__sub__dd" data-small_id="3" style="display: none;">人文地理学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="4">文化人類学</dt>
+          <dd class="Container__sub__dd" data-small_id="4" style="display: none;">文化人類学・民俗学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="5">文化財科学</dt>
+          <dd class="Container__sub__dd" data-small_id="5" style="display: none;">文化財科学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="6">文学</dt>
+          <dd class="Container__sub__dd" data-small_id="6" style="display: none;">日本文学</dd>
+          <dd class="Container__sub__dd" data-small_id="6" style="display: none;">英米・英語圏文学</dd>
+          <dd class="Container__sub__dd" data-small_id="6" style="display: none;">ヨーロッパ文学（英文学を除く）</dd>
+          <dd class="Container__sub__dd" data-small_id="6" style="display: none;">各国文学・文学論</dd>
+
+          <dt class="Container__sub__dt" data-big_id="7">言語学</dt>
+          <dd class="Container__sub__dd" data-small_id="7" style="display: none;">言語学</dd>
+          <dd class="Container__sub__dd" data-small_id="7" style="display: none;">日本語学</dd>
+          <dd class="Container__sub__dd" data-small_id="7" style="display: none;">英語学</dd>
+          <dd class="Container__sub__dd" data-small_id="7" style="display: none;">日本語教育</dd>
+          <dd class="Container__sub__dd" data-small_id="7" style="display: none;">外国語教育</dd>
+
+          <dt class="Container__sub__dt" data-big_id="8">教育学</dt>
+          <dd class="Container__sub__dd" data-small_id="8" style="display: none;">教育学</dd>
+          <dd class="Container__sub__dd" data-small_id="8" style="display: none;">教育社会学</dd>
+          <dd class="Container__sub__dd" data-small_id="8" style="display: none;">教科教育学</dd>
+          <dd class="Container__sub__dd" data-small_id="8" style="display: none;">特別支援教育</dd>
+
+          <dt class="Container__sub__dt" data-big_id="9">心理学</dt>
+          <dd class="Container__sub__dd" data-small_id="9" style="display: none;">社会心理学</dd>
+          <dd class="Container__sub__dd" data-small_id="9" style="display: none;">教育心理学</dd>
+          <dd class="Container__sub__dd" data-small_id="9" style="display: none;">臨床心理学</dd>
+          <dd class="Container__sub__dd" data-small_id="9" style="display: none;">実験心理学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="10">社会学・社会福祉学</dt>
+          <dd class="Container__sub__dd" data-small_id="10" style="display: none;">社会学</dd>
+          <dd class="Container__sub__dd" data-small_id="10" style="display: none;">社会福祉学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="11">法学</dt>
+          <dd class="Container__sub__dd" data-small_id="11" style="display: none;">基礎法学</dd>
+          <dd class="Container__sub__dd" data-small_id="11" style="display: none;">公法学</dd>
+          <dd class="Container__sub__dd" data-small_id="11" style="display: none;">国際法学</dd>
+          <dd class="Container__sub__dd" data-small_id="11" style="display: none;">社会法学</dd>
+          <dd class="Container__sub__dd" data-small_id="11" style="display: none;">刑事法学</dd>
+          <dd class="Container__sub__dd" data-small_id="11" style="display: none;">民事法学</dd>
+          <dd class="Container__sub__dd" data-small_id="11" style="display: none;">新領域法学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="12">政治学</dt>
+          <dd class="Container__sub__dd" data-small_id="12" style="display: none;">政治学</dd>
+          <dd class="Container__sub__dd" data-small_id="12" style="display: none;">国際関係論</dd>
+
+          <dt class="Container__sub__dt" data-big_id="13">経済学</dt>
+          <dd class="Container__sub__dd" data-small_id="13" style="display: none;">理論経済学</dd>
+          <dd class="Container__sub__dd" data-small_id="13" style="display: none;">経済学説・経済思想</dd>
+          <dd class="Container__sub__dd" data-small_id="13" style="display: none;">経済統計学</dd>
+          <dd class="Container__sub__dd" data-small_id="13" style="display: none;">応用経済学</dd>
+          <dd class="Container__sub__dd" data-small_id="13" style="display: none;">経済政策</dd>
+          <dd class="Container__sub__dd" data-small_id="13" style="display: none;">財政学・金融論</dd>
+          <dd class="Container__sub__dd" data-small_id="13" style="display: none;">経済史</dd>
+
+          <dt class="Container__sub__dt" data-big_id="14">経営学</dt>
+          <dd class="Container__sub__dd" data-small_id="14" style="display: none;">経営学</dd>
+          <dd class="Container__sub__dd" data-small_id="14" style="display: none;">商学</dd>
+          <dd class="Container__sub__dd" data-small_id="14" style="display: none;">会計学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="15">数学</dt>
+          <dd class="Container__sub__dd" data-small_id="15" style="display: none;">代数学</dd>
+          <dd class="Container__sub__dd" data-small_id="15" style="display: none;">幾何学</dd>
+          <dd class="Container__sub__dd" data-small_id="15" style="display: none;">数学一般（含確率論・統計数学）</dd>
+          <dd class="Container__sub__dd" data-small_id="15" style="display: none;">基礎解析学</dd>
+          <dd class="Container__sub__dd" data-small_id="15" style="display: none;">大域解析学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="16">天文学</dt>
+          <dd class="Container__sub__dd" data-small_id="16" style="display: none;">天文学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="17">物理学</dt>
+          <dd class="Container__sub__dd" data-small_id="17" style="display: none;">素粒子・原子核・宇宙線・宇宙物理</dd>
+          <dd class="Container__sub__dd" data-small_id="17" style="display: none;">物性I</dd>
+          <dd class="Container__sub__dd" data-small_id="17" style="display: none;">物性II</dd>
+          <dd class="Container__sub__dd" data-small_id="17" style="display: none;">数理物理・物性基礎</dd>
+          <dd class="Container__sub__dd" data-small_id="17" style="display: none;">原子・分子・量子エレクトロニクス</dd>
+          <dd class="Container__sub__dd" data-small_id="17" style="display: none;">生物物理・化学物理</dd>
+
+          <dt class="Container__sub__dt" data-big_id="18">地球惑星科学</dt>
+          <dd class="Container__sub__dd" data-small_id="18" style="display: none;">固体地球惑星物理学</dd>
+          <dd class="Container__sub__dd" data-small_id="18" style="display: none;">気象・海洋物理・陸水学</dd>
+          <dd class="Container__sub__dd" data-small_id="18" style="display: none;">超高層物理学</dd>
+          <dd class="Container__sub__dd" data-small_id="18" style="display: none;">地質学</dd>
+          <dd class="Container__sub__dd" data-small_id="18" style="display: none;">層位・古生物学</dd>
+          <dd class="Container__sub__dd" data-small_id="18" style="display: none;">岩石・鉱物・鉱床学</dd>
+          <dd class="Container__sub__dd" data-small_id="18" style="display: none;">地球宇宙化学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="19">プラズマ科学</dt>
+          <dd class="Container__sub__dd" data-small_id="19" style="display: none;">プラズマ科学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="20">基礎化学</dt>
+          <dd class="Container__sub__dd" data-small_id="20" style="display: none;">物理化学</dd>
+          <dd class="Container__sub__dd" data-small_id="20" style="display: none;">有機化学</dd>
+          <dd class="Container__sub__dd" data-small_id="20" style="display: none;">無機化学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="21">複合化学</dt>
+          <dd class="Container__sub__dd" data-small_id="21" style="display: none;">分析化学</dd>
+          <dd class="Container__sub__dd" data-small_id="21" style="display: none;">合成化学</dd>
+          <dd class="Container__sub__dd" data-small_id="21" style="display: none;">高分子化学</dd>
+          <dd class="Container__sub__dd" data-small_id="21" style="display: none;">機能物質化学</dd>
+          <dd class="Container__sub__dd" data-small_id="21" style="display: none;">環境関連化学</dd>
+          <dd class="Container__sub__dd" data-small_id="21" style="display: none;">生体関連化学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="22">材料化学</dt>
+          <dd class="Container__sub__dd" data-small_id="22" style="display: none;">機能材料・デバイス</dd>
+          <dd class="Container__sub__dd" data-small_id="22" style="display: none;">有機工業材料</dd>
+          <dd class="Container__sub__dd" data-small_id="22" style="display: none;">無機工業材料</dd>
+          <dd class="Container__sub__dd" data-small_id="22" style="display: none;">高分子・繊維材料</dd>
+
+          <dt class="Container__sub__dt" data-big_id="23">応用物理学・工学基礎</dt>
+          <dd class="Container__sub__dd" data-small_id="23" style="display: none;">応用物性・結晶工学</dd>
+          <dd class="Container__sub__dd" data-small_id="23" style="display: none;">薄膜・表面界面物性</dd>
+          <dd class="Container__sub__dd" data-small_id="23" style="display: none;">応用光学・量子光工学</dd>
+          <dd class="Container__sub__dd" data-small_id="23" style="display: none;">応用物理学一般</dd>
+          <dd class="Container__sub__dd" data-small_id="23" style="display: none;">工学基礎</dd>
+
+          <dt class="Container__sub__dt" data-big_id="24">機械工学</dt>
+          <dd class="Container__sub__dd" data-small_id="24" style="display: none;">機械材料・材料力学</dd>
+          <dd class="Container__sub__dd" data-small_id="24" style="display: none;">生産工学・加工学</dd>
+          <dd class="Container__sub__dd" data-small_id="24" style="display: none;">設計工学・機械機能要素・トライボロジー</dd>
+          <dd class="Container__sub__dd" data-small_id="24" style="display: none;">流体工学</dd>
+          <dd class="Container__sub__dd" data-small_id="24" style="display: none;">熱工学</dd>
+          <dd class="Container__sub__dd" data-small_id="24" style="display: none;">機械力学・制御</dd>
+          <dd class="Container__sub__dd" data-small_id="24" style="display: none;">知能機械学・機械システム</dd>
+
+          <dt class="Container__sub__dt" data-big_id="25">電気電子工学</dt>
+          <dd class="Container__sub__dd" data-small_id="25" style="display: none;">電力工学・電力交換・電気機器</dd>
+          <dd class="Container__sub__dd" data-small_id="25" style="display: none;">電子・電気材料工学</dd>
+          <dd class="Container__sub__dd" data-small_id="25" style="display: none;">電子デバイス・電子機器</dd>
+          <dd class="Container__sub__dd" data-small_id="25" style="display: none;">通信・ネットワーク工学</dd>
+          <dd class="Container__sub__dd" data-small_id="25" style="display: none;">システム工学</dd>
+          <dd class="Container__sub__dd" data-small_id="25" style="display: none;">計測工学</dd>
+          <dd class="Container__sub__dd" data-small_id="25" style="display: none;">制御工学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="26">土木工学</dt>
+          <dd class="Container__sub__dd" data-small_id="26" style="display: none;">土木材料・施工・建設マネジメント</dd>
+          <dd class="Container__sub__dd" data-small_id="26" style="display: none;">構造工学・地震工学・維持管理工学</dd>
+          <dd class="Container__sub__dd" data-small_id="26" style="display: none;">地盤工学</dd>
+          <dd class="Container__sub__dd" data-small_id="26" style="display: none;">水工学</dd>
+          <dd class="Container__sub__dd" data-small_id="26" style="display: none;">土木計画学・交通工学</dd>
+          <dd class="Container__sub__dd" data-small_id="26" style="display: none;">土木環境システム</dd>
+
+          <dt class="Container__sub__dt" data-big_id="27">建築学</dt>
+          <dd class="Container__sub__dd" data-small_id="27" style="display: none;">建築構造・材料</dd>
+          <dd class="Container__sub__dd" data-small_id="27" style="display: none;">建築環境・設備</dd>
+          <dd class="Container__sub__dd" data-small_id="27" style="display: none;">都市計画・建築計画</dd>
+          <dd class="Container__sub__dd" data-small_id="27" style="display: none;">建築史・意匠</dd>
+
+          <dt class="Container__sub__dt" data-big_id="28">材料工学</dt>
+          <dd class="Container__sub__dd" data-small_id="28" style="display: none;">金属物性</dd>
+          <dd class="Container__sub__dd" data-small_id="28" style="display: none;">無機材料・物性</dd>
+          <dd class="Container__sub__dd" data-small_id="28" style="display: none;">複合材料・物性</dd>
+          <dd class="Container__sub__dd" data-small_id="28" style="display: none;">構造・機能材料</dd>
+          <dd class="Container__sub__dd" data-small_id="28" style="display: none;">材料加工・処理</dd>
+          <dd class="Container__sub__dd" data-small_id="28" style="display: none;">金属生産工学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="29">プロセス工学</dt>
+          <dd class="Container__sub__dd" data-small_id="29" style="display: none;">化工物性・移動操作・単位操作</dd>
+          <dd class="Container__sub__dd" data-small_id="29" style="display: none;">反応工学・プロセスシステム</dd>
+          <dd class="Container__sub__dd" data-small_id="29" style="display: none;">触媒・資源化学プロセス</dd>
+          <dd class="Container__sub__dd" data-small_id="29" style="display: none;">生物機能・バイオプロセス</dd>
+
+          <dt class="Container__sub__dt" data-big_id="30">総合工学</dt>
+          <dd class="Container__sub__dd" data-small_id="30" style="display: none;">航空宇宙工学</dd>
+          <dd class="Container__sub__dd" data-small_id="30" style="display: none;">船舶海洋工学</dd>
+          <dd class="Container__sub__dd" data-small_id="30" style="display: none;">地球・資源システム工学</dd>
+          <dd class="Container__sub__dd" data-small_id="30" style="display: none;">リサイクル工学</dd>
+          <dd class="Container__sub__dd" data-small_id="30" style="display: none;">核融合学</dd>
+          <dd class="Container__sub__dd" data-small_id="30" style="display: none;">原子力学</dd>
+          <dd class="Container__sub__dd" data-small_id="30" style="display: none;">エネルギー学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="31">基礎生物学</dt>
+          <dd class="Container__sub__dd" data-small_id="31" style="display: none;">遺伝・ゲノム動態</dd>
+          <dd class="Container__sub__dd" data-small_id="31" style="display: none;">生態・環境</dd>
+          <dd class="Container__sub__dd" data-small_id="31" style="display: none;">植物分子生物・生理学</dd>
+          <dd class="Container__sub__dd" data-small_id="31" style="display: none;">形態・構造</dd>
+          <dd class="Container__sub__dd" data-small_id="31" style="display: none;">動物生理・行動</dd>
+          <dd class="Container__sub__dd" data-small_id="31" style="display: none;">生物多様性・分類</dd>
+
+          <dt class="Container__sub__dt" data-big_id="32">生物科学</dt>
+          <dd class="Container__sub__dd" data-small_id="32" style="display: none;">構造生物化学</dd>
+          <dd class="Container__sub__dd" data-small_id="32" style="display: none;">機能生物化学</dd>
+          <dd class="Container__sub__dd" data-small_id="32" style="display: none;">生物物理学</dd>
+          <dd class="Container__sub__dd" data-small_id="32" style="display: none;">分子生物学</dd>
+          <dd class="Container__sub__dd" data-small_id="32" style="display: none;">細胞生物学</dd>
+          <dd class="Container__sub__dd" data-small_id="32" style="display: none;">発生生物学</dd>
+          <dd class="Container__sub__dd" data-small_id="32" style="display: none;">進化生物学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="33">人類学</dt>
+          <dd class="Container__sub__dd" data-small_id="33" style="display: none;">自然人類学</dd>
+          <dd class="Container__sub__dd" data-small_id="33" style="display: none;">応用人類学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="34">農学</dt>
+          <dd class="Container__sub__dd" data-small_id="34" style="display: none;">育種学</dd>
+          <dd class="Container__sub__dd" data-small_id="34" style="display: none;">作物学・雑草学</dd>
+          <dd class="Container__sub__dd" data-small_id="34" style="display: none;">園芸学・造園学</dd>
+          <dd class="Container__sub__dd" data-small_id="34" style="display: none;">植物病理学</dd>
+          <dd class="Container__sub__dd" data-small_id="34" style="display: none;">応用昆虫学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="35">農芸化学</dt>
+          <dd class="Container__sub__dd" data-small_id="35" style="display: none;">植物栄養学・土壌学</dd>
+          <dd class="Container__sub__dd" data-small_id="35" style="display: none;">応用微生物学</dd>
+          <dd class="Container__sub__dd" data-small_id="35" style="display: none;">応用生物化学</dd>
+          <dd class="Container__sub__dd" data-small_id="35" style="display: none;">生物生産化学・生物有機化学</dd>
+          <dd class="Container__sub__dd" data-small_id="35" style="display: none;">食品科学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="36">森林学</dt>
+          <dd class="Container__sub__dd" data-small_id="36" style="display: none;">森林科学</dd>
+          <dd class="Container__sub__dd" data-small_id="36" style="display: none;">木質科学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="37">水産学</dt>
+          <dd class="Container__sub__dd" data-small_id="37" style="display: none;">水産学一般</dd>
+          <dd class="Container__sub__dd" data-small_id="37" style="display: none;">水産化学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="38">農業経済学</dt>
+          <dd class="Container__sub__dd" data-small_id="38" style="display: none;">農業経済学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="39">農業工学</dt>
+          <dd class="Container__sub__dd" data-small_id="39" style="display: none;">農業土木学・農村計画学</dd>
+          <dd class="Container__sub__dd" data-small_id="39" style="display: none;">農業環境工学</dd>
+          <dd class="Container__sub__dd" data-small_id="39" style="display: none;">農業情報工学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="40">畜産学・獣医学</dt>
+          <dd class="Container__sub__dd" data-small_id="40" style="display: none;">畜産学・草地学</dd>
+          <dd class="Container__sub__dd" data-small_id="40" style="display: none;">応用動物科学</dd>
+          <dd class="Container__sub__dd" data-small_id="40" style="display: none;">基礎獣医学・基礎畜産学</dd>
+          <dd class="Container__sub__dd" data-small_id="40" style="display: none;">応用獣医学</dd>
+          <dd class="Container__sub__dd" data-small_id="40" style="display: none;">臨床獣医学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="41">境界農学</dt>
+          <dd class="Container__sub__dd" data-small_id="41" style="display: none;">環境農学</dd>
+          <dd class="Container__sub__dd" data-small_id="41" style="display: none;">応用分子細胞生物学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="42">薬学</dt>
+          <dd class="Container__sub__dd" data-small_id="42" style="display: none;">化学系薬学</dd>
+          <dd class="Container__sub__dd" data-small_id="42" style="display: none;">物理系薬学</dd>
+          <dd class="Container__sub__dd" data-small_id="42" style="display: none;">生物系薬学</dd>
+          <dd class="Container__sub__dd" data-small_id="42" style="display: none;">創薬化学</dd>
+          <dd class="Container__sub__dd" data-small_id="42" style="display: none;">環境系薬学</dd>
+          <dd class="Container__sub__dd" data-small_id="42" style="display: none;">医療系薬学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="43">基礎医学</dt>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">解剖学一般（含組織学・発生学）</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">生理学一般</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">環境生理学（含体力医学・栄養生理学）</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">薬理学一般</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">医化学一般</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">病態医化学</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">人類遺伝学</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">人体病理学</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">実験病理学</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">寄生虫学（含衛生動物学）</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">細菌学（含真菌学）</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">ウイルス学</dd>
+          <dd class="Container__sub__dd" data-small_id="43" style="display: none;">免疫学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="44">境界医学</dt>
+          <dd class="Container__sub__dd" data-small_id="44" style="display: none;">医療社会学</dd>
+          <dd class="Container__sub__dd" data-small_id="44" style="display: none;">応用薬理学</dd>
+          <dd class="Container__sub__dd" data-small_id="44" style="display: none;">病態検査学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="45">社会医学</dt>
+          <dd class="Container__sub__dd" data-small_id="45" style="display: none;">衛生学</dd>
+          <dd class="Container__sub__dd" data-small_id="45" style="display: none;">公衆衛生学・健康科学</dd>
+          <dd class="Container__sub__dd" data-small_id="45" style="display: none;">法医学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="46">内科系臨床医学</dt>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">内科学一般（含心身医学）</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">消化器内科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">循環器内科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">呼吸器内科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">腎臓内科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">神経内科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">代謝学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">内分泌学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">血液内科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">膠原病・アレルギー内科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">感染症内科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">小児科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">胎児・新生児医学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">皮膚科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">精神神経科学</dd>
+          <dd class="Container__sub__dd" data-small_id="46" style="display: none;">放射線科学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="47">外科系臨床医学</dt>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">外科学一般</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">消化器外科学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">胸部外科学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">脳神経外科学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">整形外科学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">麻酔・蘇生学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">泌尿器科学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">産婦人科学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">耳鼻咽喉科学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">眼科学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">小児外科学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">形成外科学</dd>
+          <dd class="Container__sub__dd" data-small_id="47" style="display: none;">救急医学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="48">歯学</dt>
+          <dd class="Container__sub__dd" data-small_id="48" style="display: none;">形態系基礎歯科学</dd>
+          <dd class="Container__sub__dd" data-small_id="48" style="display: none;">機能系基礎歯科学</dd>
+          <dd class="Container__sub__dd" data-small_id="48" style="display: none;">病態科学系歯学・歯科放射線学</dd>
+          <dd class="Container__sub__dd" data-small_id="48" style="display: none;">保存治療系歯学</dd>
+          <dd class="Container__sub__dd" data-small_id="48" style="display: none;">補綴系歯学</dd>
+          <dd class="Container__sub__dd" data-small_id="48" style="display: none;">歯科医用工学・再生歯学</dd>
+          <dd class="Container__sub__dd" data-small_id="48" style="display: none;">外科系歯学</dd>
+          <dd class="Container__sub__dd" data-small_id="48" style="display: none;">矯正・小児系歯学</dd>
+          <dd class="Container__sub__dd" data-small_id="48" style="display: none;">歯周治療系歯学</dd>
+          <dd class="Container__sub__dd" data-small_id="48" style="display: none;">社会系歯学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="49">看護学</dt>
+          <dd class="Container__sub__dd" data-small_id="49" style="display: none;">基礎看護学</dd>
+          <dd class="Container__sub__dd" data-small_id="49" style="display: none;">臨床看護学</dd>
+          <dd class="Container__sub__dd" data-small_id="49" style="display: none;">生涯発達看護学</dd>
+          <dd class="Container__sub__dd" data-small_id="49" style="display: none;">地域・老年看護学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="50">健康・スポーツ科学</dt>
+          <dd class="Container__sub__dd" data-small_id="50" style="display: none;">身体教育学</dd>
+          <dd class="Container__sub__dd" data-small_id="50" style="display: none;">スポーツ科学</dd>
+          <dd class="Container__sub__dd" data-small_id="50" style="display: none;">応用健康科学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="51">生活科学</dt>
+          <dd class="Container__sub__dd" data-small_id="51" style="display: none;">生活科学一般</dd>
+          <dd class="Container__sub__dd" data-small_id="51" style="display: none;">食生活学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="52">芸術学</dt>
+          <dd class="Container__sub__dd" data-small_id="52" style="display: none;">美術</dd>
+          <dd class="Container__sub__dd" data-small_id="52" style="display: none;">デザイン</dd>
+          <dd class="Container__sub__dd" data-small_id="52" style="display: none;">工芸</dd>
+          <dd class="Container__sub__dd" data-small_id="52" style="display: none;">音楽</dd>
+          <dd class="Container__sub__dd" data-small_id="52" style="display: none;">舞台・演劇・映像</dd>
+          <dd class="Container__sub__dd" data-small_id="52" style="display: none;">芸術学・芸術史・芸術一般</dd>
+
+          <dt class="Container__sub__dt" data-big_id="53">情報学</dt>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">情報学基礎</dd>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">ソフトウエア</dd>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">計算機システム・ネットワーク</dd>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">メディア情報学・データベース</dd>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">知能情報学</dd>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">知覚情報処理・知能ロボティクス</dd>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">感性情報学・ソフトコンピューティング</dd>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">図書館情報学・人文社会情報学</dd>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">認知科学</dd>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">統計科学</dd>
+          <dd class="Container__sub__dd" data-small_id="53" style="display: none;">生体生命情報学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="54">環境学</dt>
+          <dd class="Container__sub__dd" data-small_id="54" style="display: none;">環境動態解析</dd>
+          <dd class="Container__sub__dd" data-small_id="54" style="display: none;">環境影響評価・環境政策</dd>
+          <dd class="Container__sub__dd" data-small_id="54" style="display: none;">放射線・化学物質影響科学</dd>
+          <dd class="Container__sub__dd" data-small_id="54" style="display: none;">環境技術・環境材料</dd>
+
+          <dt class="Container__sub__dt" data-big_id="55">神経科学</dt>
+          <dd class="Container__sub__dd" data-small_id="55" style="display: none;">神経科学一般</dd>
+          <dd class="Container__sub__dd" data-small_id="55" style="display: none;">神経解剖学・神経病理学</dd>
+          <dd class="Container__sub__dd" data-small_id="55" style="display: none;">神経化学・神経薬理学</dd>
+          <dd class="Container__sub__dd" data-small_id="55" style="display: none;">神経・筋肉生理学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="56">実験動物学</dt>
+          <dd class="Container__sub__dd" data-small_id="56" style="display: none;">実験動物学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="57">人間医工学</dt>
+          <dd class="Container__sub__dd" data-small_id="57" style="display: none;">医用生体工学・生体材料学</dd>
+          <dd class="Container__sub__dd" data-small_id="57" style="display: none;">医用システム</dd>
+          <dd class="Container__sub__dd" data-small_id="57" style="display: none;">リハビリテーション科学・福祉工学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="58">科学教育・教育工学</dt>
+          <dd class="Container__sub__dd" data-small_id="58" style="display: none;">科学教育</dd>
+          <dd class="Container__sub__dd" data-small_id="58" style="display: none;">教育工学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="59">科学社会学・科学技術史</dt>
+          <dd class="Container__sub__dd" data-small_id="59" style="display: none;">科学社会学・科学技術史</dd>
+
+          <dt class="Container__sub__dt" data-big_id="60">地理学</dt>
+          <dd class="Container__sub__dd" data-small_id="60" style="display: none;">地理学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="61">ナノ・マイクロ科学</dt>
+          <dd class="Container__sub__dd" data-small_id="61" style="display: none;">ナノ構造科学</dd>
+          <dd class="Container__sub__dd" data-small_id="61" style="display: none;">ナノ材料・ナノバイオサイエンス</dd>
+          <dd class="Container__sub__dd" data-small_id="61" style="display: none;">マイクロ・ナノデバイス</dd>
+
+          <dt class="Container__sub__dt" data-big_id="62">社会・安全システム科学</dt>
+          <dd class="Container__sub__dd" data-small_id="62" style="display: none;">社会システム工学・安全システム</dd>
+          <dd class="Container__sub__dd" data-small_id="62" style="display: none;">自然災害科学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="63">ゲノム科学</dt>
+          <dd class="Container__sub__dd" data-small_id="63" style="display: none;">基礎ゲノム科学</dd>
+          <dd class="Container__sub__dd" data-small_id="63" style="display: none;">応用ゲノム科学</dd>
+          <dd class="Container__sub__dd" data-small_id="63" style="display: none;">ゲノム情報科学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="64">生物分子科学</dt>
+          <dd class="Container__sub__dd" data-small_id="64" style="display: none;">生物分子科学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="65">資源保全学</dt>
+          <dd class="Container__sub__dd" data-small_id="65" style="display: none;">資源保全学</dd>
+
+          <dt class="Container__sub__dt" data-big_id="66">地域研究</dt>
+          <dd class="Container__sub__dd" data-small_id="66" style="display: none;">地域研究</dd>
+
+          <dt class="Container__sub__dt" data-big_id="67">ジェンダー</dt>
+          <dd class="Container__sub__dd" data-small_id="67" style="display: none;">ジェンダー</dd>
+
+        </dl>
+
+    </ul>
+    </div>
+  </div>
+
+<script type="text/javascript">
+
+$('.Container__sub__dd').css('display','none');
+
+$('.Container__sub__dt').on('click',function (e) {
+  // $('.Container__sub__dd').css('display','none');
+
+  const index = $('.Container__sub__dt').index(this)+1;
+  $('[data-small_id='+index+']').toggle()
+
+});
+
+$('.Container__sub__dd').on('click', function (e) {
+
+  const category = $(e.target).text();
+
+  $('.SearchArea__Keywords__input').val(category);
+
+  $('.SearchArea__Submit__button').trigger('click');
+});
+
+</script>
+
+
+
+  <div class="Container__main">
+
+    <div class="Contents">
+    <div class="Contents__Header">
+      <div class="Contents__Header__title">植物育種学<span id="notice">
+</span></div>
+      <div class="Contents__Header__sub">
+        <div class="Contents__Header__place"><i class="fa fa-university" aria-hidden="true"></i>九州大学</div>
+        <div class="Contents__Header__category"><i class="fa fa-tag" aria-hidden="true"></i>組込み,ユビキタス</div>
+      </div>
+    </div>
+
+
+    <div class="Contents__Body">
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">指導教員</div>
+
+        渡辺さん
+
+<!--         <div class="Contents__Teacher__list">
+          <div class="Contents__Teacher__item">福田先生</div>
+          <div class="Contents__Teacher__item">久住先生</div>
+        </div>
+ -->      
+        </div>
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">研究室メンバー</div>
+        <div class="Contents__Teacher__list">
+
+        </div>
+      </div>
+
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">研究テーマ</div>
+
+        <div></div>
+      </div>
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">関連授業</div>
+          <p>力学</p>
+      </div>
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">主な就職先</div>
+          <p>Good Find</p>
+      </div>
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">基本DATA</div>
+        <div></div>
+        <div>福岡県福岡市</div>
+      </div>
+
+
+
+    </div>
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+<!-- 
+
+
+
+<a href="/labs/1/edit">Edit</a> |
+<a href="/labs">Back</a> -->
+
+
+
+
+  
+
+</body><div></div></html>
