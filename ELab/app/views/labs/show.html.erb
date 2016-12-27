@@ -1,18 +1,22 @@
-<p id="notice"><%= notice %></p>
-
 
 
 <div class="Container l-column">
 
   <%= render 'layouts/sidebar' %>
 
-
-
   <div class="Container__main">
 
     <div class="Contents">
+
+    <%= link_to "Edit", edit_lab_path(@lab), :class=>"Contents__DemoEdit button button-green button-l"%>
+
+
     <div class="Contents__Header">
-      <div class="Contents__Header__title"><%= @lab.name %></div>
+      <div class="Contents__Header__title"><%= @lab.name %>
+      <% if notice %>
+        <span id="notice"><i class="fa fa-check-circle-o" aria-hidden="true"></i><%= notice %></span>
+      <% end %>
+      </div>
       <div class="Contents__Header__sub">
         <div class="Contents__Header__place"><i class="fa fa-university" aria-hidden="true"></i>九州大学</div>
         <div class="Contents__Header__category"><i class="fa fa-tag" aria-hidden="true"></i>組込み,ユビキタス</div>
@@ -47,8 +51,12 @@
 
       <div class="Contents__Section">
         <div class="Contents__Section__title">研究テーマ</div>
-
         <div><%= @lab.theme_detail %></div>
+      </div>
+
+      <div class="Contents__Section">
+        <div class="Contents__Section__title">メッセージ</div>
+        <div><%= @lab.message %></div>
       </div>
 
       <div class="Contents__Section">
@@ -89,10 +97,3 @@
 
 
 
-
-
-
-
-
-<%= link_to 'Edit', edit_lab_path(@lab) %> |
-<%= link_to 'Back', labs_path %>

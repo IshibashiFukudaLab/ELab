@@ -237,6 +237,7 @@
 }
 
 .Contents {
+  position: relative;
   &__Header {
 
     margin-bottom: $space-unit;
@@ -264,7 +265,6 @@
 
   }
 
-
   &__Section{
     margin: $space-unit*2 0;
     &__title {
@@ -272,13 +272,60 @@
       font-size: 2.0rem;
       border-top: 1px solid $color-border-gray;
       border-bottom: 1px solid $color-border-gray;
-
     }
+  }
+
+  &__DemoEdit {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+
 
   }
 
-
-
 }
 
+.Edit {
+  margin-left: $space-unit*3;
 
+  &__title {
+    font-size: 3.0rem;
+    padding: $space-unit 0;
+  }
+
+  &__Section {
+    &__title {
+      font-size: 2.4rem;
+      padding: $space-unit/2 0;
+    }
+
+    & textarea {
+      width: 400px;
+      height: 200px;
+    }
+  }
+
+  &__Lessons {
+    max-width: 800px;
+  }
+
+  &__Footer {
+    margin: $space-unit*2 0;
+    & input {
+      background: $btn-blue;
+      color: white;
+      padding: 8px;
+      font-size: 3.0rem;
+      @include darken-bg($btn-blue);
+
+    }
+  }
+}
+
+#notice {
+  font-size: 1.8rem;
+  color:#1E9F75;
+  padding-left: $space-unit/2;
+
+}

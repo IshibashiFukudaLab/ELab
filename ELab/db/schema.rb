@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20161226200917) do
   create_table "lessons", force: :cascade do |t|
     t.integer  "college_id"
     t.string   "name",       null: false
+    t.string   "kana"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["college_id"], name: "index_lessons_on_college_id"

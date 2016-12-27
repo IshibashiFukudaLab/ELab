@@ -115,7 +115,7 @@ class LabsController < ApplicationController
         end
         params[:group][:company_ids].each do |company|
           @companylab = CompanyLab.new(company_id: company, lab_id: @lab.id)
-          @companylab.save!
+          @companylab.save
         end
         format.html { redirect_to @lab, notice: 'Lab was successfully updated.' }
         format.json { render :show, status: :ok, location: @lab }
@@ -143,7 +143,7 @@ class LabsController < ApplicationController
     end
 
     def set_lessons
-      @lessons = Lesson.all
+      @lessons = Lesson.order(:kana)
     end
 
     def set_companies
