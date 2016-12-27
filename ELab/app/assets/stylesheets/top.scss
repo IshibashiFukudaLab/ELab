@@ -9,6 +9,7 @@
   align-items: center;
   background: #EEEFF4;
   height: 450px;
+  min-width: 1000px;
 
   &__Main {
     min-width: 500px;
@@ -41,6 +42,7 @@
 }
 
 .About {
+  min-width: 1000px;
   margin: $space-unit*2 0;
   text-align: center;
   display: -webkit-flex;
@@ -54,7 +56,6 @@
     padding: $space-unit 0;
   }
 
-
   & table {
     font-size: 4.0rem;
     margin: $space-unit auto;
@@ -65,7 +66,113 @@
       color: #FFD44A;
     }
 
-
-
   }
 }
+
+.Features {
+  min-width: 1000px;
+
+  background: #EEEFF4;
+  padding: 80px 0;
+  &__Header {
+    text-align: center;
+
+    &__title {
+    font-size: 5.0rem;
+    padding: $space-unit 0;
+
+    }
+    
+  }
+
+  &__Body {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    margin-top: $space-unit*2;
+    justify-content: center;
+
+    &__col {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+
+
+      &:nth-child(1){
+        color: #1E9F75;
+      }
+      &:nth-child(2){
+        margin: 0 100px;
+        color: #266878;
+      }
+      &:nth-child(3){
+        color: #FFA700;
+      }
+      & i{
+        font-size: 10.0rem;
+      }
+    }
+  } 
+  
+}
+
+.Case {
+
+  text-align: center;
+
+  &__title {
+    font-size: 3.2rem;
+    padding: $space-unit*3 0;
+  }
+
+  &__Body {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+
+  &__main {
+    text-align: left;
+  }
+  & .fa-user{
+    font-size: 10.0rem;
+
+      &:nth-child(1){
+        color: #1E9F75;
+        margin-right: 30px;
+      }
+      &:nth-child(2){
+        color: #266878;
+      }
+      &:nth-child(3){
+        color: #FFA700;
+      }
+  
+  }
+
+
+}
+
+.underArrow {
+  padding: $space-unit*2 0;
+  text-align: center;
+  font-size: 5.0rem;
+}
+
+
+
+
+
+
+
+
